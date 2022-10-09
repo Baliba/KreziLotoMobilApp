@@ -1,0 +1,19 @@
+<div class="money-block">
+    <p class="line line-a" (click)="updateCompte()">
+        <span>kont</span>
+        <b class="sold">{{ user.compte | number   }}</b>
+        <sup>HTG</sup>
+    </p>
+    <p class="line line-b" (click)="updateCompte()">
+        <span>Bonis</span>
+        <b class="sold">{{ user.bonus | number }}</b>
+        <sup>HTG</sup>
+    </p>
+    <p class="line line-c take-money"  (click)="goToKL()" >
+        <b class="sold">Achte Pwen</b>
+    </p>
+    <p class="line line-c add-money" routerLink="/game/depot">
+        <b class="sold">Chanje pwen</b>
+    </p>
+
+</div>

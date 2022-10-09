@@ -1,0 +1,184 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Fich ki pase'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form-n box-m">
+        <div class="col-md-12 white p-2">
+            <div class="form-group">
+                <label>Rechèche tikè pase</label>
+                <select [(ngModel)]="day" (change)="onChange($event)">
+                <option value="7" >7 jou</option>
+                <option value="15" >15 jou</option>
+                <option value="31" >1 Mwa</option>
+                <option value="93" >3 Mwa</option>
+                <option value="186" >6 Mwa</option>
+                <option value="365" >1 an</option>
+                </select>
+            </div>
+        </div>
+        <div class="col-md-12  row" *ngIf="tickets.length>0">
+
+
+            <div class="col-md-12 white" *ngFor='let item of tickets ; index as i'>
+                <div class="row">
+                    <div class="col-md-12 text-center" style="text-align: left;">
+                        <h3 class="text-success" routerLink='/game/ticket/{{item.id}}'>
+                            {{ item?.game_name }}
+                        </h3>
+                        <span style="float: left; text-align: left;">
+                           {{item.lots.length}} boul
+                      </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row col-md-12">
+                        <div class=" col-md-12 text-right" style="text-align: right;">
+                            <span style="float: left;" *ngIf="!see[i]" (click)="see[i]=true">
+                    <i class="glyphicon glyphicon-eye-open text-success"></i>
+                  </span>
+                            <span style="float:left;" *ngIf="see[i]" (click)="see[i]=false">
+                    <i class="glyphicon glyphicon-eye-close text-danger"></i>
+                  </span>
+                            <span style="float: right;">{{''| dateInText :item.sdatet }}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row" *ngIf="see[i]">
+                    <div class="lots" style="padding: 1%;">
+                        <table class="table " style="margin-top: 1%;">
+                            <thead>
+                                <tr>
+                                    <th>Jwet</th>
+                                    <th>Boul</th>
+                                    <th>Kob</th>
+                                    <th *ngIf="!item.over">
+                                        Max Gen
+                                    </th>
+                                    <th *ngIf="item.over">
+                                        Gen
+                                    </th>
+                                    <th *ngIf="item.over">
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let cart of item.lots; let d = index'>
+                                    <td>
+                                        {{cart.code_mg}}
+                                    </td>
+                                    <td>
+                                        {{cart.lot}}
+                                    </td>
+                                    <td>
+                                        {{cart.montant | number }} G
+                                    </td>
+                                    <td *ngIf="!item.over">
+                                        {{cart.pwin}} G
+                                    </td>
+                                    <td *ngIf="item.over">
+                                        {{cart.win_price | number }} G
+                                    </td>
+
+                                    <td *ngIf="item.over">
+                                        <i *ngIf="cart.win==0" class="text-danger  glyphicon glyphicon-remove"></i>
+                                        <i *ngIf="cart.win==1" class="text-success glyphicon glyphicon-ok"></i>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            Pri fich:
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td *ngIf="item.over">
+
+                                    </td>
+                                    <td class="text-right">
+
+                                    </td>
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            {{ item.total_price | number}} G
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="!item.over">
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            Total max gen:
+                                        </div>
+
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td class="text-right">
+
+                                    </td>
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            {{ item.max_win | number}} G
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="item.over">
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            Gen:
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td *ngIf="item.over">
+
+                                    </td>
+                                    <td class="text-right">
+
+                                    </td>
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            {{ item.win_pay | number }} G
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="item._bonus && item.over">
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            rediksyon:
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td *ngIf="item.over">
+
+                                    </td>
+                                    <td class="text-right">
+
+                                    </td>
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            -90%
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+        <div class="col-md-12 white" *ngIf="tickets.length==0">
+            <div class="col-md-12" style="text-align: center;">
+                <h3 class="text-center text-danger">0 tikè</h3>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

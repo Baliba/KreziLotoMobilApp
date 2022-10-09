@@ -1,0 +1,30 @@
+<h2 class="text-center">
+    Jwe {{modegame?.name}}
+</h2>
+<div class="boule-board">
+    <div [style.background-color]="getBGC(item)" *ngFor="let item of boules; let i = index" class="bouleItem" (click)="addOrRemoveBoule(item,i)">
+        <span> {{ item }}</span>
+    </div>
+</div>
+
+<div class="input-board">
+    <div class="ib-left">
+        <label>Kob la </label>
+        <input type="number" (keyup)="onChangeMontant($event)" [(ngModel)]="montant" class="form-control" [max]='modegame?.max_sell' />
+        <p class="text-danger"> {{msgMontant}}</p>
+    </div>
+    <div class="ib-right" *ngIf="pb.length>0 && montant">
+        <button class="btn btn-success" (click)="play()">
+          Fini
+       </button>
+        <button class="btn btn-danger" (click)="cancel()">
+           anile
+        </button>
+    </div>
+    <div class="col-md-12" *ngIf="pb.length==0 || !montant">
+        <button class="btn btn-danger" (click)="cancel()">
+        anile
+     </button>
+    </div>
+
+</div>

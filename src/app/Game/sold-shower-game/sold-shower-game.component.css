@@ -1,0 +1,102 @@
+.money-block {
+    text-align: center;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.money-block .line {
+    text-align: center;
+    position: relative;
+    height: auto;
+    margin: 1%;
+    height: auto;
+    padding: 1%;
+    background-color: white;
+    border-radius: 5px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+}
+
+.money-block .line-a {
+    margin: 1%;
+    display: inline-block;
+    float: left;
+    width: 48%;
+    border-radius: 0px 10px 10px 10px;
+    -webkit-border-radius: 0px 10px 10px 10px;
+    -moz-border-radius: 0px 10px 10px 10px;
+}
+
+.money-block .line-c {
+    height: auto;
+    margin: 1%;
+    display: inline-block;
+    width: 48%;
+    border-radius: 10px 10px 10px 10px;
+    -webkit-border-radius: 10px 10px 10px 10px;
+    -moz-border-radius: 10px 10px 10px 10px;
+    border-style: solid;
+    border-width: 1px;
+    color: white;
+}
+
+.add-money {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f4ba2e), to(#fea036));
+    background-image: -o-linear-gradient(bottom, #f4ba2e 0%, #fea036 100%);
+    background-image: linear-gradient(0deg, #f4ba2e 0%, #fea036 100%);
+    border-color: #fea036;
+    float: left;
+}
+
+.take-money {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#ec038b), to(#fb6468));
+    background-image: -o-linear-gradient(bottom, #ec038b 0%, #fb6468 100%);
+    background-image: linear-gradient(0deg, #ec038b 0%, #fb6468 0%);
+    border-color: #fb6468;
+    float: right;
+}
+
+.money-block .line-b {
+    height: auto;
+    margin: 1%;
+    display: inline-block;
+    float: right;
+    width: 48%;
+    border-radius: 0px 10px 10px 10px;
+    -webkit-border-radius: 10px 0px 10px 10px;
+    -moz-border-radius: 10px 0px 10px 10px;
+}
+
+.money-block .line .sold {
+    font-size: 16px;
+    font-weight: bolder;
+    text-align: center;
+    color: #3b368c;
+    line-height: 100%;
+    margin-left: 1%;
+    margin-right: 1.5%;
+}
+
+.money-block .line span {
+    position: relative;
+    vertical-align: text-bottom;
+    font-size: 9px;
+    text-align: left;
+    line-height: 100%;
+    color: gray;
+}
+
+.money-block sup {
+    position: relative;
+    top: 1%;
+    right: 1%;
+    font-size: 12px;
+    text-align: right;
+    vertical-align: text-top;
+    color: darkgrey;
+    margin-top: 1%;
+}

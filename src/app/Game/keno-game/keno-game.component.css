@@ -1,0 +1,113 @@
+.board {
+    width: 98%;
+    margin: 1%;
+    display: inline-block;
+    min-height: 330px;
+    background-color: #ec1379;
+    border-radius: 5px;
+    border: solid #fea036 10px;
+}
+
+.board .case h2 {
+    color: white;
+    font-size: 20px;
+}
+
+h3,
+h1 {
+    color: white;
+}
+
+.board .case {
+    position: relative;
+    float: left;
+    width: 32%;
+    margin-left: 1%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 100px;
+    display: inline-block;
+    background-color: white;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 3px 2px 0px rgba(32, 29, 30, 0.25);
+    box-shadow: 0px 3px 2px 0px rgba(32, 29, 30, 0.25);
+    text-align: center;
+}
+
+.actived h2,
+.actived h3 {
+    color: white;
+}
+
+.ocase {
+    padding: 20px;
+}
+
+.ocase h2,
+.ocase h3 {
+    color: #fea036;
+}
+
+.modal {
+    position: absolute;
+    top: 20%;
+    z-index: 999;
+    width: 98%;
+    margin: 1%;
+    display: inline-block;
+    height: 250px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 1px 3px -1px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 5%;
+}
+
+.actived {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f4ba2e), to(#fea036));
+    background-image: -o-linear-gradient(bottom, #f4ba2e 0%, #fea036 100%);
+    background-image: linear-gradient(0deg, #f4ba2e 0%, #fea036 100%);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fea036;
+    padding: 20px;
+}
+
+.btn-click {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f4ba2e), to(#0ea036));
+    background-image: -o-linear-gradient(bottom, #097f22 0%, #0ea036 100%);
+    background-image: linear-gradient(0deg, #097f22 0%, #0ea036 100%);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #097f22;
+    color: white;
+    padding-top: 5px;
+}
+
+.btn-click-no {
+    padding-top: 5px;
+    background-image: -o-linear-gradient(83deg, #ec1379 0%, #6c0092 100%);
+    background-image: linear-gradient(7deg, #ec1379 0%, #6c0092 100%);
+    border: 1px solid #6c0092;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 3px 2px 0px rgba(32, 29, 30, 0.25);
+    box-shadow: 0px 3px 2px 0px rgba(32, 29, 30, 0.25);
+    padding: 5px 10px;
+    font-size: 16px;
+    line-height: 26px;
+    color: #ffffff;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.win-text {
+    color: #097f22;
+    text-align: center;
+}
+
+.lost-text {
+    color: #ec038b;
+    text-align: center;
+}

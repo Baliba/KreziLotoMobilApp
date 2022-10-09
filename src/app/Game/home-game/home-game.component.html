@@ -1,0 +1,92 @@
+<div class="body-page-no-head-white-home">
+    <app-menu [cNot]="getNot(cNot)"></app-menu>
+    <div class="body-page" *ngIf="games==0" style="margin-top:8%;">
+        <!-- <div class="popup-newuser" *ngIf="newMan!=1">
+        <h1 class="text-1"> KreziLoto Ap fè kado </h1>
+        <h1 class="text-2"> 1,000,000 goud bonis</h1>
+        <h1 class="text-5"> Pou fèt fen dane a </h1>
+        <div class="box-body">
+            <div class="img-box">
+                <img src="assets/noel.png" class="game-logo">
+            </div>
+        </div>
+        <div class="box-text">
+            Depoze 250g ak kòd koupon sa
+        </div>
+        <h1 class="text-3"> kl888 </h1>
+        <h1 class="text-4"> wap jwen 100g bonis </h1>
+        <button routerLink="/game/depot" class="depo"> Depoze lajan</button>
+        <button class="ignore" (click)="closepup()">inyore</button>
+       </div> -->
+        <div style="min-height:360px;">
+
+            <div class="block-menu-center-game">
+
+                <div class="col-md-12 col-sm-12" *ngIf="user.compte<=0" style="margin-top:8%; margin-bottom:8%;">
+                    <img style="width: 98%; margin-left: 1%; margin-right: 1%; margin-top: -2.5%;" routerLink="/game/depot" src="https://sandbox.moncashbutton.digicelgroup.com/Moncash-middleware/resources/assets/images/MC_button_kr.png">
+                </div>
+
+                <div class="item-game" (click)="playNow()">
+                    <div class="btn-menu-img">
+                        <img src="assets/bolet.png" />
+                    </div>
+                    <span>Bolèt</span>
+                </div>
+
+                <div class="item-game" (click)="goToKeno()">
+                    <div class="btn-menu-img">
+                        <img src="assets/keno.jpg" />
+                    </div>
+                    <span>Bolèt imedya</span>
+                </div>
+                <!-- <div class="item-game" *ngIf="user.id==40" routerLink="/game/blackjack">
+                <div class="btn-menu-img">
+                    <img src="assets/blackjack.png" />
+                </div>
+                <span>BlackJack </span>
+            </div> -->
+
+            </div>
+
+            <div class="col-md-12 row">
+
+
+                <div class="header-slide" *ngIf="draws | async">
+                    <span style="font-size: 17px;"> Tiraj </span><a class="view-all" style="font-size: 14px;" routerLink="/game/htiraj"> Al wè lot tiraj ></a>
+                    <hr>
+                </div>
+                <div class="scrolling-wrapper">
+                    <div class="card" *ngFor='let item of draws | async; index as i'>
+                        <div class="col-md-12 text-center" style="text-align: center;">
+                            <h4 style="text-align: left;">{{item.code_game}}</h4>
+                            <h6 style="text-align: left;">{{ '' | dateInText:item.date_tiraj : item.heure_tiraj }} </h6>
+                        </div>
+                        <hr>
+                        <app-draw-game *ngIf="item" [item]="item"></app-draw-game>
+                        <div class="price" *ngIf="item.win_price">
+                            <hr/>
+                            <img src="assets/images/ac3.png">
+                            <b>{{ item.win_price | number }} G</b>
+                        </div>
+                    </div>
+                    <div class="card" *ngFor='let item of ydraws | async; index as i'>
+                        <div class="col-md-12 text-center" style="text-align: center;">
+                            <h4 style="text-align: left;">{{item.code_game}}</h4>
+                            <h6 style="text-align: left;">{{ '' | dateInText:item.date_tiraj : item.heure_tiraj }} </h6>
+                        </div>
+                        <hr>
+                        <app-draw-game *ngIf="item" [item]="item"></app-draw-game>
+                        <div class="price" *ngIf="item.win_price">
+                            <hr/>
+                            <img src="assets/images/ac3.png">
+                            <b>{{ item.win_price | number }} G</b>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>

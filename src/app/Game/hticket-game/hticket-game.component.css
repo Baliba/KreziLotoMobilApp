@@ -1,0 +1,40 @@
+hr {
+    margin-top: -1%;
+}
+
+.white {
+    position: relative;
+    background-color: aliceblue;
+    margin-left: 1%;
+    margin-top: 2%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.p-2 {
+    padding: 2%;
+}
+
+.card-pay {
+    float: left;
+    width: 98%;
+    height: auto;
+    margin: auto;
+}
+
+.right-card {
+    font-size: 12px;
+    color: gray;
+    float: right;
+}
+
+th {
+    font-size: 17px;
+}
+
+td {
+    font-size: 14px;
+}
+
+td i {
+    float: right
+}

@@ -1,0 +1,8 @@
+<!-- ==========About-counter-Section========== -->
+<app-home-game *ngIf="games==0" (pageEventHome)="goToPage($event)" [ydraws]="ydraws" [draws]="draws" [games]="games" [gameSettings]="gameSettings" [user]="user" [toDay]="toDay"></app-home-game>
+
+<app-list-game (pageEventLGame)="goToPage($event)" *ngIf="games==1" [games]="games" [gameSettings]="gameSettings" [user]="user" [toDay]="toDay">
+</app-list-game>
+
+<app-cart (pageEventCart)="goToPage($event)" *ngIf="games==2 && selectedGame " [selectedGame]="selectedGame" [games]="games" [gameSettings]="gameSettings" [user]="user" [toDay]="toDay">
+</app-cart>

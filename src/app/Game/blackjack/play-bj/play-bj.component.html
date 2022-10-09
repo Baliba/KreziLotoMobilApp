@@ -1,0 +1,116 @@
+<div class="screen">
+
+    <div class="loader" *ngIf="state==0" style=" background-image: url(assets/casino/loading_bg.png); ">
+        <div class="box-loading">
+            <h2>Black Jack</h2>
+            <div class="logo">
+                <img src="assets/blackjack.png" />
+            </div>
+            <div class="box-loader-bar">
+                <div class="loader-bar" [style.width]="per+'%'"></div>
+            </div>
+            <span>{{per}}%</span>
+        </div>
+    </div>
+
+    <div class="error" *ngIf="state>=100">
+        <div class="col-md-12" *ngIf="state==100">
+            <h1>Erreur Server </h1>
+            <button class="btn btn-primary" (click)="getConfig()">
+            Re-eseye
+         </button>
+        </div>
+    </div>
+
+    <div class="game" [hidden]="state!=1">
+        <div class="game-board" [hidden]="gameState!=1">
+
+            <div class="header bordered">
+                <h2> {{user.firstName }} </h2>
+            </div>
+
+            <div class="canvas bordered">
+                <div #hdeal class="handCard_a">
+                </div>
+                <div [hidden]="!ready" class="note"> {{getTotalPointForDealer()}}</div>
+            </div>
+
+            <div class="handCard bordered">
+                <div class="note" [hidden]="!ready"> {{getTotalPointForUser()}}</div>
+                <div #huser class="handCard_a">
+                </div>
+            </div>
+            <div class="footer">
+                <div class="action-1">
+                    <button class="btn btn-primary" (click)="hit()">
+                        Kontinye
+                    </button>
+                    <button class="btn btn-danger" (click)="stop()">
+                        Kanpe
+                      </button>
+                </div>
+                <div class="action-2">
+                    <button [hidden]="isEleven()" class="btn btn-success" (click)="double()">
+                        double
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="init-game-board" [hidden]="gameState!=0">
+
+            <div class="bet-board">
+                <div class="col-md-12 text-center">
+                    <h2 class="heading">Komanse jwe BlackJack</h2>
+                </div>
+                {{img}}
+                <div class="col-md-12">
+                    <app-alert [alert]="alert" pos="1"></app-alert>
+                </div>
+                <div class="row text-center">
+                    <div class="col-xs-6">
+                        <label>Pari Blackjack</label>
+                        <select [(ngModel)]="userbet.bet_bj">
+                           <option [value]="item" *ngFor="let item of config?.bet" >{{item | number}} G</option>
+                        </select>
+                    </div>
+                    <div class="col-xs-6">
+                        <label>Pari adisyonèl</label>
+                        <input type="checkbox" [(ngModel)]="userbet.sb" />
+                    </div>
+                </div>
+                <div class="row" *ngIf="userbet.sb">
+                    <div class="form-group col-xs-6">
+                        <label>Parye sou </label>
+                        <select [(ngModel)]="userbet.type_sb">
+                            <option value="1" >flush ak 4 zèl 100X</option>
+                            <option value="2" >Pè ak flush 25X</option>
+                            <option value="3" >flush sèlman 12X</option>
+                            <option value="4" >Pè selman 6X</option>
+                          </select>
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <label>Pari 2</label>
+                        <select [(ngModel)]="userbet.bet_sb">
+                          <option value="item" *ngFor="let item of config.bet" >{{item | number}} G</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-md-12 col-xs-12">
+                        <button [disabled]="lgame" (click)="initGameBJ()" class="btn btn-primary" *ngIf="(userbet.bet_bj && !userbet.sb ) || (userbet.bet_bj && userbet.type_sb && userbet.bet_sb)">Jwe</button>
+                    </div>
+                    <div class="form-group col-md-12 col-xs-12">
+                        <button routerLink="/game/home" class="btn btn-danger">Retounen</button>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+
+                    <a>Regleman jwet la</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

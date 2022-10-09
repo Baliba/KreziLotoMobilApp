@@ -1,0 +1,59 @@
+<div class="body-page-no-head-white-home">
+
+    <div class="page-1 " [hidden]="page!=0">
+        <img [defaultImage]="'assets/logo.png'" [lazyLoad]="'assets/logo.png'" class="logo-game" />
+        <h1>Byenvini sou KreziLoto</h1>
+        <img src="assets/loto.png">
+        <div class="details">
+            Nou se yon jwèt Kazino kotew ka jwe epi achte pwen,epui chanj pwen an lajan tout bon. Sanw pa deplase lakay ou. Li fasil pou itilize, ou ka depoze lajan ak moncash epi fè echanj voye sou kont ou ak moncash lew genyen.
+        </div>
+        <div class="col-md-12 text-center">
+            <button class="depo" (click)="page=1">
+                          Swivan
+            </button>
+        </div>
+    </div>
+    <div class="page-2" [hidden]="page!=1">
+
+        <h1 class="text-center">Men list jwèt nou genyen yo</h1>
+        <div class="list-game">
+            <img class="games" [src]="'assets/games/'+img" *ngFor="let img of imgs">
+        </div>
+
+        <div class="text-center hbonis">Welcome Bonis</div>
+        <h2 class="text-center ">Fè premye acha pwenw, kounya la wap jwenn </h2>
+        <div class="bonis">
+            50<i>%</i>
+        </div>
+        <div class="col-md-12 col-sm-12 text-center ">
+            <img style="width: 40%; margin:1%; margin-bottom:2%; margin-top:-5%;" src="https://sandbox.moncashbutton.digicelgroup.com/Moncash-middleware/resources/assets/images/MC_button_kr.png">
+        </div>
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <h2 class="text-center">Bonis sou kòb ou depoze an avèk Moncash</h2>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 ">
+                <app-alert [alert]="alert" style="font-size:30px;" pos="1"></app-alert>
+            </div>
+            <div class="col-md-12 col-sm-12 " *ngIf="amount>=min && depo">
+                <span class="badge badge-success" style="font-size:30px;"> wap jwenn {{amount*0.5 | number }}G Bonis</span>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 ">
+                <label>Antre Kantite kob la </label>
+                <input type="number" class="form-control" min="50" [(ngModel)]="amount" />
+                <span class="text-danger" *ngIf="amount && (amount<min || amount>max) "> Kob la dwe ant ({{min}}G & {{max|number}}G)</span>
+            </div>
+            <div class="col-md-12 col-sm-12">
+                <button [disabled]="!depo || amount<min" class="depo" (click)="makeDepo()"> Depoze </button>
+            </div>
+            <hr/>
+            <div class="col-md-12">
+                <button class="quit" (click)="quit()">
+                      Ale nan paj akèy la
+                   </button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

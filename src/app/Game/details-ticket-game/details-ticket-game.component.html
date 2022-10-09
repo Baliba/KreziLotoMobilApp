@@ -1,0 +1,206 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Detay Tikè'" [back]="true" [url]="'/game/ticket'"></app-page-title-game>
+    <div class="box-form" *ngIf="item">
+
+        <div class="col-md-12">
+            <div class="card-pay white" *ngIf="tiraj">
+                <div class="col-md-12 line-card">
+                    <i class="left-card">
+                      <b class="text-success"> {{tiraj.code_game}} </b>
+                   </i>
+                    <i class="right-card">
+                    {{ '' | dateInText:tiraj.date_tiraj : tiraj.heure_tiraj }}
+                   </i>
+                </div>
+                <hr>
+                <app-draw-game-line [item]="tiraj"></app-draw-game-line>
+                <hr>
+            </div>
+        </div>
+
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <div class="col-md-12 text-center" style="text-align: left;">
+                    <h3 class="text-success" *ngIf="!tiraj">
+                        {{ item?.game_name }}
+                    </h3>
+                    <span style="float: left; text-align: left;">
+                     {{item.lots.length}} boul
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="row">
+                    <div class=" col-md-12 text-right right-card " style="text-align: right;">
+                        <span style="float: right;">{{''| dateInText :item?.sdatet }} {{item.sheure}}</span>
+                    </div>
+                </div>
+                <span *ngIf="item._bonus" style="float:right; text-align: center; margin:1%;" class="badge badge-success">
+                  Bonus
+               </span>
+                <div class="lots" style="padding: 1%;">
+                    <table class="table " style="margin-top: 1%;">
+                        <thead>
+                            <tr>
+                                <th>Jwet</th>
+                                <th>Boul</th>
+                                <th>Kob</th>
+                                <th *ngIf="!item.over">
+                                    Max Gen
+                                </th>
+                                <th *ngIf="item.over">
+                                    Gen
+                                </th>
+                                <th *ngIf="item.over">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor='let cart of item.lots; let d = index'>
+                                <td>
+                                    {{cart.code_mg}}
+                                </td>
+                                <td>
+                                    {{cart.lot}}
+                                </td>
+                                <td>
+                                    {{cart.montant | number }} G
+                                </td>
+                                <td *ngIf="!item.over">
+                                    {{cart.pwin}} G
+                                </td>
+                                <td *ngIf="item.over">
+                                    {{cart.win_price | number }} G
+                                </td>
+
+                                <td *ngIf="item.over">
+                                    <i *ngIf="cart.win==0" class="text-danger  glyphicon glyphicon-remove"></i>
+                                    <i *ngIf="cart.win==1" class="text-success glyphicon glyphicon-ok"></i>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="col-md-12 text-right">
+                                        Pri fich:
+                                    </div>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td *ngIf="item.over">
+
+                                </td>
+                                <td class="text-right">
+
+                                </td>
+                                <td>
+                                    <div class="col-md-12 text-right">
+                                        {{ item.total_price | number}} G
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr *ngIf="!item.over">
+                                <td>
+                                    <div class="col-md-12 text-right">
+                                        Total max gen:
+                                    </div>
+
+                                </td>
+                                <td>
+
+                                </td>
+                                <td class="text-right">
+
+                                </td>
+                                <td>
+                                    <div class="col-md-12 text-right">
+                                        {{ item.max_win | number}} G
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr *ngIf="item.over">
+                                <td>
+                                    <div class="col-md-12 text-right">
+                                        Gen:
+                                    </div>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td *ngIf="item.over">
+
+                                </td>
+                                <td class="text-right">
+
+                                </td>
+                                <td>
+                                    <div class="col-md-12 text-right">
+                                        {{ item.win_pay | number }} G
+                                    </div>
+                                </td>
+                            </tr>
+
+                            <tr *ngIf="item._bonus && item.over">
+                                <td>
+                                    <div class="col-md-12 text-right">
+                                        rediksyon:
+                                    </div>
+                                </td>
+                                <td>
+
+                                </td>
+                                <td *ngIf="item.over">
+
+                                </td>
+                                <td class="text-right">
+
+                                </td>
+                                <td>
+                                    <div class="col-md-12 text-right">
+                                        -90%
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <div class="alert alert-warning" *ngIf="item._bonus && item.over">
+                        Lew Jwe ak lajan bonis, nou peyew selman 10% nan kob ou genyen an .
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-12" style="padding : 5px; text-align: center;" *ngIf="item.assurance">
+                    <hr style="margin-top:-2px; margin-bottom:-2px; " />
+                    <label style="font-size:17px" class="text-success">Ou patisipe nan <b>krezi-Milyon</b> ak fich sa a</label>
+                    <div class="row mb-2">
+                        <div class="col-md-6 col-sm-6 col-xs-6  p-4">
+                            <img src="assets/km.png" height="96" />
+                        </div>
+                        <div class="col-md-6 col-sm-6 col-xs-6 p-4">
+                            <b class="text-success" style="margin-top:20%;">{{item.sold_assurance.toFixed(2) | number }}G</b>
+                        </div>
+                    </div>
+                    <hr style="margin-top:-2px; margin-bottom:-2px; margin-top:100; " />
+                </div>
+
+
+                <div class="col-md-12" style="padding: 1%;">
+                    <app-alert [alert]="alert" pos="1"></app-alert>
+
+                    <button [disabled]="bloading" class="btn btn-success" *ngIf="!item.over" (click)="verify()">
+                 Verifye tike sa
+              </button>
+                    <button style="margin-top: 1%;" routerLink="/game/ticket" class="btn btn-danger">
+                al we lot tike yo
+              </button>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

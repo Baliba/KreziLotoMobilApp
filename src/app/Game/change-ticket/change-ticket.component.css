@@ -1,0 +1,36 @@
+.frame {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.btn-float-right {
+    position: relative;
+    float: right;
+    right: 2%;
+}
+
+.frame {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 1%;
+}
+
+.frame-video {
+    width: 100%;
+    height: 500px;
+}
+
+.ticket-img {
+    width: 25px;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.logo-game-icon {
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}

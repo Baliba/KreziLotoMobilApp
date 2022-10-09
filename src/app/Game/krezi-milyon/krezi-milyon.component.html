@@ -1,0 +1,22 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Krezimilyon'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+
+    <div class="box-form">
+        <div class="col-md-12 card-km">
+            <h2>Tiraj Krezimilyon </h2>
+            <h3> {{ km?.deb.split(" ")[0] }} - {{ km?.fn.split(" ")[0] }} </h3>
+            <span>{{km?.sold | number }}G</span>
+            <hr/>
+        </div>
+        <div class="col-md-12 card-km" *ngIf="kmt.length==0">
+            <h3 class="txt-dander text-danger"> Ou pa gen tikè pou krezimilyon</h3>
+        </div>
+
+        <div class="col-md-12 card-km" *ngIf="kmt.length!=0">
+            <div class="line-card" *ngFor="let km of kmt">
+
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Chanje tikè an kòb'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+
+    <div class="box-form box-1">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <img [defaultImage]="'assets/gold.png'" [lazyLoad]="'assets/gold.png'" class="logo-game-icon" />
+            </div>
+            <div class="col-md-12">
+                <h3 class="text-center">Kontinye jwe pou ka gen plis tikè</h3>
+                <h4 class="text-center text-success">
+                    Ou gen {{user.tickets}} Tikè
+                </h4>
+                <p class="text-center text-success" style="font-size: 12px;">
+                    Nan paj sa ou ka konvèti tikè ou yo an kob tout bon
+                </p>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 ">
+                <app-alert [alert]="alert" pos="1"></app-alert>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 ">
+                <label>Antre Kantite Tikè a </label>
+                <input type="number" class="form-control" min="250" [(ngModel)]="amount" />
+            </div>
+
+            <div class="col-md-12 col-sm-12 ">
+                <button class="ok-btn col-md-12 btn-block" (click)="makeChange()"> Chanje </button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

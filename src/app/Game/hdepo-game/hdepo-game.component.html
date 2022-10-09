@@ -1,0 +1,45 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Depo ki pase'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form-n box-m">
+        <div class="col-md-12 white p-2">
+            <div class="form-group">
+                <label>Rechèche depo pase</label>
+                <select [(ngModel)]="day" (change)="onChange($event)">
+                  <option value="7" >7 jou</option>
+                  <option value="15" >15 jou</option>
+                  <option value="31" >1 Mwa</option>
+                  <option value="93" >3 Mwa</option>
+                  <option value="186" >6 Mwa</option>
+                  <option value="365" >1 an</option>
+                  </select>
+            </div>
+        </div>
+        <div class="col-md-12 white " *ngFor="let item of pays">
+            <div class="line-card ">
+                <i class="right-card"> {{item.date_created}}</i>
+                <i class="left-card">  <b class="text-primary"> Depo #{{item.id}}</b> </i>
+            </div>
+            <hr/>
+            <div class="row col-md-12 card-pay">
+                <div class="line-card" *ngIf="item.type_depot==0">
+                    <i class="left-card"> <b>Moncash</b>: {{item.no_mc}}</i>
+                    <i class="right-card"> <span class="badge bagde-primary"> #{{item.id_transaction}} </span> </i>
+                </div>
+                <div class="line-card" *ngIf="item.type_depot==1">
+                    <i class="left-card"> <b>Depozan</b>: {{item.id_deposant}}</i>
+                </div>
+                <div class="line-card">
+                    <i class="left-card" *ngIf="item.type_depot==0">  <b>Odè</b>: #{{item.id_order}}</i>
+                    <i class="right-card"> <b>Montan</b>:{{item.montant | number}}G</i>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+
+
+</div>

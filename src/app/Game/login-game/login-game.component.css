@@ -1,0 +1,13 @@
+input {
+    height: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 100%;
+    letter-spacing: 2px;
+}
+
+.login {
+    display: inline-block;
+    align-items: center;
+    margin-top: 15%;
+}

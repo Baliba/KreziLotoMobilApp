@@ -1,0 +1,14 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Notifikasyon'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form-n">
+        <div class="col-md-12 card-not" *ngFor="let item of nots">
+            <h3> Notifikasyon <b>{{ item.id}}</b> </h3>
+            <hr/>
+            <p [innerHTML]="item.message"> </p>
+            <span> <i>
+              {{  "" | dateInText:item.date_not }}
+            </i>
+          </span>
+        </div>
+    </div>
+</div>

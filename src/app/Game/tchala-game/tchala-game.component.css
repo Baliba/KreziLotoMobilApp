@@ -1,0 +1,14 @@
+.p-2 {
+    padding: 2%;
+}
+
+hr {
+    margin-top: -1%;
+    margin-bottom: -0.5%;
+}
+
+.white {
+    background-color: aliceblue;
+    margin: 2%;
+    border-radius: 10px 10px 10px 10px;
+}

@@ -1,0 +1,40 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Tiraj ki pase'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form-n box-m">
+        <div class="col-md-12 white p-2">
+            <div class="form-group">
+                <label>Rechèche tiraj pase</label>
+                <select [(ngModel)]="day" (change)="onChange($event)">
+              <option value="7" >7 jou</option>
+              <option value="15" >15 jou</option>
+              <option value="31" >1 Mwa</option>
+              <option value="93" >3 Mwa</option>
+              <option value="186" >6 Mwa</option>
+              <option value="365" >1 an</option>
+            </select>
+            </div>
+        </div>
+        <div class="col-md-12" *ngIf="tickets.length>0">
+            <div class="card-pay white" *ngFor='let item of tickets ; index as i'>
+                <div class="col-md-12 line-card">
+                    <i class="left-card">
+                     <b> {{item.code_game}} </b>
+                    </i>
+                    <i class="right-card">
+                      {{ '' | dateInText:item.date_tiraj : item.heure_tiraj }}
+                    </i>
+                </div>
+                <hr>
+                <app-draw-game-line *ngIf="item" [item]="item"></app-draw-game-line>
+            </div>
+        </div>
+        <div class="col-md-12 white" *ngIf="tickets.length==0">
+            <div class="col-md-12" style="text-align: center;">
+                <h3 class="text-center text-danger">0 tiraj</h3>
+            </div>
+        </div>
+    </div>
+
+
+
+</div>

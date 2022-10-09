@@ -1,0 +1,29 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Konfidans'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form box-m">
+        <div class="form-group col-md-12 col-sm-12 ">
+            <app-alert [alert]="alert" pos="1"></app-alert>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-6">
+                <label>Ansyen Kod sekre an</label>
+                <input type="password" [(ngModel)]="pass.h" class="form-control">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Nouvo Kod sekre an</label>
+                <input type="password" [(ngModel)]="pass.n" class="form-control">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>reantre nouvo kod sekre an</label>
+                <input type="password" [(ngModel)]="pass.n2" class="form-control">
+            </div>
+
+            <div class="form-group col-md-12">
+                <button class="btn btn-primary" (click)="save()" style="margin-top: 2%;">Modifye</button>
+            </div>
+        </div>
+    </div>
+
+</div>

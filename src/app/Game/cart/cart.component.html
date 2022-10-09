@@ -1,0 +1,266 @@
+<div class="body-page-no-head-white">
+    <app-top-menu-game (pageEventLGame)="quitCart()" [titre]="selectedGame?.gamemaster?.code" [back]="false" [url]="'/game/home'" page="0"></app-top-menu-game>
+    <div class="box-form box-m">
+        <div class="col-lg-12" *ngIf="tools==0">
+            <div class="text-center row">
+                <div class="result-box">
+                    <!-- <app-sold-shower-game [user]="user"></app-sold-shower-game> -->
+                    <div class="row col-md-12">
+                        <div class="col-md-5 col-sm-12 col-xs-12">
+                            <div *ngIf="modegame" class="form-group col-md-12">
+                                <h2 class="text-center">
+                                    {{ (!edit)? 'Jwe' : 'Modifye' }} {{modegame.name}}
+                                </h2>
+
+                                <div *ngIf="edit" class='btn btn-danger btn-sm pull-right' (click)='closeEdit()'>
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="form-group  col-md-6 col-sm-6 col-xs-6" *ngIf="modegame">
+                                    <label> jwèt la</label>
+                                    <select class="form-control" (change)="onChange($event)" [(ngModel)]="modegame">
+                                  <option [ngValue]="item" *ngFor='let item of selectedGame.modegames; let i = index'>
+                                    {{item.name}}
+                                  </option>
+                                </select>
+                                </div>
+                                <div class="form-group  col-md-12 col-sm-12 col-xs-12" *ngIf="!modegame">
+                                    <label> jwèt la</label>
+                                    <select class="form-control" (change)="onChange($event)" [(ngModel)]="modegame">
+                                <option [ngValue]="item" *ngFor='let item of selectedGame.modegames; let i = index'>
+                                  {{item.name}}
+                                </option>
+                              </select>
+                                </div>
+                                <div *ngIf="modegame" class="form-group col-md-6 col-sm-6 col-xs-6">
+                                    <label>Boul la</label>
+                                    <input [(ngModel)]="boule" (keyup)="onChangeBoule($event)" type="text" [max]="maxNum" class="form-control" [maxlength]='modegame?.max_num' />
+                                    <p class="text-danger"> {{msgBoule}}</p>
+                                </div>
+
+                                <div *ngIf="modegame" class="form-group col-md-12 col-sm-12 col-xs-12">
+                                    <label>Kob la
+                                    <div class='pull-right'>
+                                     <i class="text-danger glyphicon glyphicon-remove" (click)='cleanMontant()'></i>
+                                    </div>
+                                  </label>
+                                    <input type="number" (keyup)="onChangeMontant($event)" [(ngModel)]="montant" class="form-control" [max]='modegame?.max_sell' />
+                                    <p class="text-danger"> {{msgMontant}}</p>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+
+                                <button class='pay' *ngIf="modegame?.code=='BOR' && !boule " (click)="getToolsPanel(modegame.code)">
+                                  <i class="glyphicon glyphicon-cog"> </i>
+                                </button>
+
+
+
+                            </div>
+
+                            <div class="col-md-12" *ngIf="VB">
+                                <button class='ok-btn' (click)="addOrEditTicket()">
+                                   {{ (!edit)? 'Ajoute' : 'Modifye' }}
+                                </button>
+                            </div>
+                            <div class="col-md-12">
+                                <app-alert [alert]="alert" pos="1"></app-alert>
+                            </div>
+                        </div>
+
+                        <div class="col-md-7 col-sm-12 col-xs-12" style="margin-bottom: 100px;" *ngIf="carts.length>0">
+
+                            <div class="ticket-box">
+                                <div class="text-left">
+                                    <h3>{{carts?.length}} boul </h3>
+                                    <h4>{{getTotalCarts() | number }} G </h4>
+                                </div>
+                                <div class="icon-right" (click)="ticket=!ticket">
+                                    <i class="glyphicon glyphicon glyphicon-list-alt text-primary"> </i>
+                                </div>
+                            </div>
+
+                            <table *ngIf="!ticket" class="table" style="margin-top: 1%;" data-provides="rowlink">
+                                <thead>
+                                    <tr>
+                                        <th>Jwèt</th>
+                                        <th>Boul</th>
+                                        <th>Kob</th>
+                                        <th>Gen</th>
+                                        <th>
+                                            Aksyon
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor='let cart of carts; let d = index'>
+                                        <td class="text-left">
+                                            {{cart.code_mg}}
+                                        </td>
+                                        <td>
+                                            {{cart.lot}}
+                                        </td>
+                                        <td>
+                                            {{cart.montant | number}} G
+                                        </td>
+                                        <td>
+                                            {{ getMaxMGWin(cart.win ,cart.montant) | number}} G
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12">
+                                                <div class="form-group col-md-5">
+                                                    <div class='btn btn-danger btn-sm' (click)='delItemFromCart(d)'>
+                                                        <i class="glyphicon glyphicon-remove"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-5">
+                                                    <div class="btn btn-primary btn-sm" (click)='editItemFromCart(d)'>
+                                                        <i class="glyphicon glyphicon-pencil"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr *ngIf="getTotalCarts()>0">
+                                        <td>
+                                            <div class="col-md-12 text-left">
+                                                Total:
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="text-right">
+
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12 text-right">
+                                                {{ getTotalCarts().toFixed(2) | number}} G
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr *ngIf="getTotalCarts()>0">
+                                        <td>
+                                            <div class="col-md-12 text-left">
+                                                Max gen :
+                                            </div>
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td class="text-right">
+
+                                        </td>
+                                        <td>
+
+                                        </td>
+                                        <td>
+                                            <div class="col-md-12 text-right">
+                                                {{ max_win | number}} G
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                            <div class="row" *ngIf="getTotalCarts()>0">
+                                <div class="col-md-12 text-center" style="font-size: 30px;">
+                                    <div (click)="clearCarts()">
+                                        <i class="glyphicon glyphicon-trash text-danger"></i>
+                                    </div>
+                                </div>
+                                <div class="form-group col-md-12">
+                                    <label class="text-left">koupon</label>
+                                    <input [(ngModel)]="coupon" class="form-control" />
+                                    <label class="badge badge-info">Siw gen kob koupon mete wap jwen bonis </label>
+                                </div>
+                                <div class="col-md-12" *ngIf="!see">
+                                    <div class="col-md-12" style="margin-bottom:2%;">
+                                        <h3 class="text-center">Peye</h3>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                        <button *ngIf="!bloading" [disabled]="bloading" class='ok-btn' (click)='pop(true, 1)'>
+                                      Cash
+                                  </button>
+                                    </div>
+                                    <div class="form-group col-md-6 col-sm-6 col-xs-6">
+                                        <button *ngIf="!bloading" [disabled]="bloading" class='cancel-btn' (click)='pop(true, 0)'>
+                                      Bonis
+                                    </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <div class="alert alert-warning" style="margin:1%;">
+                                    NB: gen saw wè an se pa gen reyèl la vre, se yo estimasyon de kantite kob ou ka fe an total.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <app-play-bor (cEvent)="canceltools()" *ngIf="tools==1" (playListBoule)="playListBoule($event)" (ocmEvent)="onChangeMontantAd($event)" [selectedGame]="selectedGame" [modegame]="modegame" [montant]="montant" [msgMontant]="msgMontant"></app-play-bor>
+    </div>
+</div>
+<div class="poppup text-center" *ngIf="see && mpay==0">
+    <h2>Eskew vle peye avek bonis?</h2>
+    <h3 class="text-warning">NB:Lew peye avek bonis wap jwenn selman 10% nan gen an.</h3>
+    <button *ngIf="!bloading" [disabled]="bloading" class='ok-btn' (click)='pay(mpay)'>
+   WI
+</button>
+    <button class='cancel-btn' (click)='pop(false, mpay)'>
+    NON
+</button>
+</div>
+
+<div class="poppup-2 text-center" *ngIf="see && mpay==1">
+    <h3 style="padding-top:5px; padding-bottom:5px;  text-align:left;" class="text-success">
+        Finalize fich ou
+        <i style="float:right; font-size:20px;" (click)='pop(false, mpay)' class="glyphicon glyphicon-remove text-danger"></i>
+    </h3>
+    <div class="row col-md-12" style="padding : 5px;">
+        <hr style="margin-top:-2px; margin-bottom:-2px; " />
+        <label style="font-size:17px">Eskew  vle patisipe nan <b>krezi-Milyon</b> ?</label>
+        <div class="col-md-6 col-sm-6 col-xs-6  p-4">
+            <img src="assets/km.png" height="96" />
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 p-4">
+            <input type="checkbox" style="width:40px; margin:2px; margin-top: 10%;" [(ngModel)]="ass" />
+        </div>
+    </div>
+    <ul class="list-group" style="font-size:15px; margin-bottom:2px;">
+        <li class="list-group-item" *ngIf="!ass" style="padding : 5px;">
+            <h6 class="text-warning" style="font-size:8px;">
+                Chak mwa <b>kreziloto </b> ap fè kado 1.000.000 (1 Milyon) Goud an 4 fwa, sa vle di chak dimanch nap bay 250.000 (250 mil ) Goud.
+            </h6>
+        </li>
+    </ul>
+    <ul class="list-group" style="font-size: 12px;">
+        <li class="list-group-item" style="padding : 5px;" *ngIf="ass">KreziMilyon : {{ (getTotalCarts()*pass).toFixed(2) | number}} G</li>
+        <li class="list-group-item" style="padding : 5px;">Kont : {{user.compte | number }} G</li>
+        <li class="list-group-item" style="padding : 5px;">Pri fich la: {{ getTotalCarts().toFixed(2) | number}} G</li>
+        <li class="list-group-item" *ngIf="ass" style="padding : 5px;">Pri total fich la: {{ getpriTotalFichla().toFixed(2) | number}} G</li>
+        <li class="list-group-item" style="padding : 5px;">Balans : {{ (user.compte - getpriTotalFichla()).toFixed(2) | number}} G</li>
+        <li class="list-group-item ">
+            <div class="">
+                <button *ngIf="!bloading" [disabled]="bloading" class='ok-btn col-md-6' (click)='pay(mpay)'>
+              Peye
+            </button>
+            </div>
+            <div class="">
+
+            </div>
+        </li>
+    </ul>
+</div>

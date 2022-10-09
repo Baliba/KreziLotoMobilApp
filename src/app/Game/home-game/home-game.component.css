@@ -1,0 +1,425 @@
+@import url('https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Pacifico&family=Roboto:wght@100&family=Source+Sans+Pro:ital,wght@1,200&display=swap');
+.toDay {
+    width: 98%;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+    color: #6c0092;
+    font-size: 20px;
+    font-weight: bold;
+    text-shadow: 0.3px -.3px 0.3px rgba(0, 0, 0, 0.41);
+}
+
+.card h4 {
+    color: grey;
+}
+
+.price {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+}
+
+.price img {
+    float: left;
+    margin: 1%;
+    width: 25.4px;
+    height: 22.5px;
+}
+
+.price b {
+    float: right;
+    margin: 1%;
+    font-size: 15px;
+    color: grey;
+}
+
+.boul-chans {
+    width: 98%;
+    height: auto;
+    display: inline-block;
+    text-align: center;
+}
+
+.boul-chans h3 {
+    text-align: center;
+    color: gray;
+}
+
+.share-Active-center {
+    position: relative;
+    display: inline-block;
+    width: 98%;
+    height: auto;
+    margin: 1%;
+    margin-bottom: 5%;
+    background-color: aliceblue;
+    padding: 1%;
+    text-align: center;
+}
+
+.block-Active-center {
+    position: relative;
+    display: inline-block;
+    width: 98%;
+    height: auto;
+    margin: 1%;
+    margin-bottom: 5%;
+    -webkit-box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    background-color: aliceblue;
+    color: #ff5964;
+    padding: 1%;
+    text-align: center;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.block-Active-center h3 {
+    color: #666a86;
+}
+
+.share-Active-center h3 {
+    color: gray;
+}
+
+.share-Active-center p {
+    color: #fea036;
+}
+
+.block-menu-center-game {
+    width: 99%;
+    height: auto;
+    margin: 2px;
+    display: inline-block;
+}
+
+.block-menu-center-game .item-game {
+    position: relative;
+    display: inline-block;
+    /* -webkit-box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    border-radius: 2px 2px 2px 2px; */
+    padding: 2px;
+    width: 48%;
+    height: 92px;
+    margin: 1%;
+    font-size: 15px;
+    text-align: center;
+}
+
+.block-menu-center-game .item-game span {
+    width: 100%;
+    font-weight: bold;
+    color: #292929;
+    font-family: 'Roboto', sans-serif;
+}
+
+.block-menu-center-game .item-game:first-child {
+    float: left;
+}
+
+.block-menu-center-game .item-game .btn-menu-img {
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #fea036;
+    cursor: pointer;
+    height: 60px;
+}
+
+.block-menu-center-game .item-game .btn-menu-img img {
+    position: relative;
+    height: 60px;
+    margin: none;
+}
+
+.block-menu-center {
+    position: relative;
+    display: inline-block;
+    width: 98%;
+    height: 70px;
+    margin: 1%;
+    -webkit-box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    border-radius: 0px 0px 10px 10px;
+    background-color: white;
+    padding-top: 5px;
+}
+
+.block-menu-center .btn-menu {
+    width: 31%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 1px;
+    display: inline-block;
+    text-align: center;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f4ba2e), to(#fea036));
+    background-image: -o-linear-gradient(bottom, #f4ba2e 0%, #fea036 100%);
+    background-image: linear-gradient(0deg, #f4ba2e 0%, #fea036 100%);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fea036;
+    border-radius: 5px;
+    /* -webkit-box-shadow: 0px 3px 2px 0px rgba(32, 29, 30, 0.25);
+    box-shadow: 0px 3px 2px 0px rgba(32, 29, 30, 0.25); */
+    padding: 5px 15px;
+    padding-top: 1px;
+    padding-bottom: auto;
+    font-size: 16px;
+    line-height: 26px;
+    color: #ffffff;
+    display: inline-block;
+    cursor: pointer;
+    height: 60px;
+    float: left;
+}
+
+.block-menu-center .btn-menu:last-child {
+    padding-top: 15px;
+}
+
+.img-menu-center {
+    position: relative;
+    display: inline-block;
+    width: 98%;
+    height: 100px;
+    margin: 1%;
+    -webkit-box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    border-radius: 0px 0px 10px 10px;
+    background-color: white;
+    padding-top: 5px;
+}
+
+.img-menu-center img {
+    width: 98%;
+    height: 90px;
+    margin: auto !important;
+}
+
+.block-menu-center .btn-menu .item-menu {
+    position: relative;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    top: 10px;
+}
+
+.block-menu-center .btn-menu .item-menu:last-child {
+    margin-bottom: 0;
+    top: 5px;
+}
+
+.block-menu-center .btn-menu .item-menu span {
+    float: right;
+    position: relative;
+    vertical-align: text-top;
+    margin: 0.1%;
+}
+
+.block-menu-center .btn-menu .item-menu span:last-child {
+    margin-top: none;
+}
+
+.block-menu-center .btn-menu i {
+    color: #ffffff;
+    font-size: 23px;
+}
+
+.scrolling-wrapper {
+    white-space: nowrap;
+}
+
+.scrolling-wrapper hr {
+    margin: none;
+}
+
+.scrolling-wrapper .card {
+    width: 97%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+    margin: 1.5%;
+    padding: 0.5%;
+    padding-top: 2%;
+    -webkit-box-shadow: 0px 10px 43px 0px rgba(12, 0, 255, 0.1);
+    box-shadow: 0px 10px 43px 0px rgba(12, 0, 255, 0.1);
+    background-color: white;
+}
+
+.scrolling-wrapper-flexbox {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.scrolling-wrapper-flexbox .card {
+    flex: 0 0 auto;
+}
+
+.scrolling-wrapper {
+    -webkit-overflow-scrolling: touch;
+}
+
+.scrolling-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.header-slide {
+    width: 96%;
+    height: auto;
+    display: inline-block;
+    text-align: left;
+    color: #292929;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 2%;
+}
+
+.header-slide span {}
+
+.header-slide a {
+    float: right;
+    text-align: right;
+}
+
+.header-slide hr {
+    margin-top: 2%;
+}
+
+.footer {
+    height: 120px;
+    padding: 1%;
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+    border-top: gray;
+}
+
+.popup-newuser {
+    position: absolute;
+    top: -15%;
+    width: 96%;
+    margin: 2%;
+    height: 520px;
+    z-index: 9999;
+    border-radius: 5px;
+    background: white;
+    box-shadow: -1px 1px 4px 1px black;
+    text-align: center;
+    color: black;
+}
+
+.popup-newuser h1 {
+    color: rgb(194, 78, 78);
+    font-size: 1.5rem;
+    margin: none;
+    padding: none;
+    letter-spacing: 2px;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.popup-newuser .text-1 {
+    color: #0B6E4F;
+    font-size: 1.5rem;
+    margin: none;
+    padding: none;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.popup-newuser .text-5 {
+    color: #C20114;
+    font-size: 1.5rem;
+    margin: none;
+    padding: none;
+    font-family: 'Luckiest Guy', cursive;
+}
+
+.popup-newuser .box-text {
+    color: black;
+    font-size: 0.8 rem;
+    margin-top: -2%;
+    padding: none;
+    font-size: larger;
+    font-weight: bold;
+}
+
+.popup-newuser .text-2 {
+    color: #f4ba2e;
+    font-size: 1.5rem;
+    text-shadow: 0.5px 0.5px 0.1px black;
+    margin: none;
+    padding: none;
+    font-family: 'Luckiest Guy', cursive;
+    margin-top: -2%;
+}
+
+.popup-newuser .text-3 {
+    font-size: 1.5rem;
+    text-shadow: 0.5px 0.5px 0.5px black;
+    margin: none;
+    padding: none;
+    font-family: 'Luckiest Guy', cursive;
+    margin-top: -2%;
+}
+
+.popup-newuser .text-4 {
+    color: #0B6E4F;
+    font-size: 1.5rem;
+    margin: none;
+    padding: none;
+    font-family: 'Luckiest Guy', cursive;
+    margin-top: -2%;
+}
+
+.popup-newuser .ignore {
+    background-image: linear-gradient( 0deg, #ec038b 0%, #fb6468 0%);
+    border-color: #fb6468;
+}
+
+.popup-newuser .depo {
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f4ba2e), to(#fea036));
+    background-image: -o-linear-gradient(bottom, #f4ba2e 0%, #fea036 100%);
+    background-image: linear-gradient(0deg, #f4ba2e 0%, #fea036 100%);
+}
+
+.popup-newuser button {
+    width: 48%;
+    margin: 1%;
+    color: white;
+}
+
+.popup-newuser button:first-child {
+    float: left;
+}
+
+.popup-newuser .box-body {
+    display: grid;
+    grid-template-columns: 100%;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    margin-top: -3%;
+}
+
+.popup-newuser .box-body img {
+    width: 50%;
+    justify-content: center;
+    text-align: center;
+}
+
+.block-ticket {
+    position: relative;
+    width: 98%;
+    height: 100px;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+
+.block-ticket img {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    float: left;
+}

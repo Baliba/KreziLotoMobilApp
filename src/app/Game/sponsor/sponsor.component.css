@@ -1,0 +1,31 @@
+.card {
+    background-color: white;
+    border-radius: 5px;
+    padding: 2%;
+    margin-bottom: 1%;
+    text-align: center;
+}
+
+td {
+    font-size: 14px;
+}
+
+td div {
+    font-size: 14px;
+}
+
+.card-ticket {
+    background-color: blanchedalmond;
+    border-radius: 10px;
+}
+
+.sold-agent {
+    line-height: 100%;
+    text-align: center;
+    color: green;
+}
+
+.right-card {
+    float: right;
+    font-size: 10px;
+}

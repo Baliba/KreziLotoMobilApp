@@ -1,0 +1,86 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Retire lajan'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form box-m">
+        <div class="col-md-12">
+            <img [defaultImage]="'assets/images/af2.png'" [lazyLoad]="'assets/images/af2.png'" class="logo-game-icon" />
+        </div>
+        <div class="col-md-12">
+            <h3 class="text-center">Retrè</h3>
+        </div>
+        <div class="form-group col-md-12 col-sm-12 ">
+            <app-alert [alert]="alert" pos="1"></app-alert>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-6">
+                <label>Mete Kantite kob la  </label>
+                <input type="phone" [(ngModel)]="pay.sold" class="form-control">
+            </div>
+
+            <div class="form-group col-md-6">
+                <label>Chwazi metod la </label>
+                <select [(ngModel)]="pay.type_pay" class="form-control">
+                      <option value="0"> MonCash</option>
+                      <option value="1"> Bank Transfert National</option>
+                      <option value="2"> Bank Transfert International</option>
+                      <option value="3"> Chèk </option>
+                      <option value="4"> Biro KreziLoto</option>
+                </select>
+            </div>
+
+
+
+            <div class="row col-md-12" *ngIf="pay.type_pay==0">
+                <div class="form-group col-md-12">
+                    <label>Nimero Moncash ou </label>
+                    <input type="phone" [(ngModel)]="pay.moncash" class=" form-control ">
+                </div>
+            </div>
+
+            <div class="row col-md-12" *ngIf="pay.type_pay==1 || pay.type_pay==2 ">
+
+                <div class="form-group col-md-6">
+                    <label>NO SWIFT Bank </label>
+                    <input type="text" [(ngModel)]="pay.swift" class="form-control">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Non Bank la </label>
+                    <input type="text" [(ngModel)]="pay.nom_bank" class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Non Kont ou an  </label>
+                    <input type="text" [(ngModel)]="pay.nom_compte" class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label>Nimero kont ou an</label>
+                    <input type="text" [(ngModel)]="pay.numero" class="form-control">
+                </div>
+            </div>
+
+            <div class="row col-md-12" *ngIf="pay.type_pay==5 ">
+                <div class="form-group col-md-12">
+                    <label>Pin nan  </label>
+                    <input type="text" [(ngModel)]="pay.pin" class=" form-control ">
+                    <p>Pin sa ou dwe bay li lew pral pran kob la.</p>
+                </div>
+            </div>
+
+            <div class="row col-md-12" *ngIf="pay.type_pay==3 ">
+                <div class="form-group col-md-12">
+                    <label>Nom moun ki dwe sou chèk la </label>
+                    <input type="text" [(ngModel)]="pay.nom_complet" class=" form-control ">
+                </div>
+            </div>
+            <div class="form-group col-md-12">
+                <label>Kòd sekrè ou </label>
+                <input type="password" autocomplete="off" [(ngModel)]="pay.pass" class="form-control">
+            </div>
+            <div class="form-group col-md-12 ">
+                <button class="btn btn-primary " (click)="payout() " style="margin-top: 2%; ">Retire</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+<div class='bar'>
+    <div class="back-button" *ngIf="back" routerLink="{{url}}">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+    </div>
+    <div class="titre">
+        {{titre}}
+    </div>
+
+    <div class="refresh-button" *ngIf="dt==99" (click)="reloadComponent()">
+        <i class="glyphicon glyphicon glyphicon-refresh"></i>
+    </div>
+</div>

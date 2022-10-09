@@ -1,0 +1,61 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Ajan Marketing'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form-n box-m">
+        <div class="col-md-12 white p-2">
+
+            <div class="col-md-12 white p-2">
+                <div class="form-group">
+                    <label>Coupon</label>
+                    <select [(ngModel)]="state" (change)="onChange($event)">
+                <option value="0" >Ankou</option>
+                <option value="1" >Pase</option>
+                </select>
+                </div>
+            </div>
+
+            <div class="col-sm-12 col-md-12 white card" *ngIf="state==1">
+                <div class="col-sm-12 col-md-3 form-group">
+                    <label>Dat li komanse</label>
+                    <input type="date" [(ngModel)]="debut" />
+                </div>
+                <div class="col-sm-12 col-md-3 form-group">
+                    <label>Dat li fin</label>
+                    <input type="date" [(ngModel)]="fin" />
+                </div>
+                <div class="col-sm-12 col-md-3 form-group" style="vertical-align:center; padding:auto;">
+                    <button class="btn btn-primary" style="vertical-align:center; margin-top:auto; margin-bottom:auto;" (click)="getMyPastUcs()">Recherche</button>
+                </div>
+            </div>
+
+            <div class="col-md-12" *ngIf="ucs.length>0">
+
+                <div class="card white" *ngFor='let item of ucs ; index as i'>
+                    <div class="col-md-12">
+                        <app-alert [alert]="alert" pos="item.id"></app-alert>
+                    </div>
+                    <div class="col-md-12 line-card">
+                        <h3 class="text-primary">
+                            koupon: <b style="color:black;"> {{item.code_coupon}} </b> | Gen:
+
+                            <b style="color:black;">  {{ item.agent_amount | number}} G</b>
+                        </h3>
+                    </div>
+                    <i class="right-card">
+                      {{ '' | dateInText:item.date_order.split(" ")[0] : item.date_order.split(" ")[1] }}
+                    </i>
+                    <div class="col-md-12 line-card text-center">
+                        <span *ngIf="state==1" class="badge badge-warning text-center">Deja ankese</span>
+                        <button *ngIf="state==0" [disabled]="loading[item.id]" class="btn btn-primary" (click)="payAgentNow(item.id,i)">Touche</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 white" *ngIf="ucs.length==0">
+                <div class="col-md-12 card" style="text-align: center;">
+                    <h3 class="text-center text-danger">0 coupon utilize</h3>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>

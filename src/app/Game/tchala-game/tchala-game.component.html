@@ -1,0 +1,38 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'tchala'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form-n box-m">
+        <div class="col-md-12 white p-2">
+            <div class="form-group">
+                <label>Rechèche tchala</label>
+                <input type="text" class="form-control" (keyup)="onKey($event)" [(ngModel)]="query" />
+            </div>
+        </div>
+        <div class="col-md-12 white p-2">
+            <table class="table table-striped" style="margin-top: 1%;" data-provides="rowlink">
+                <thead>
+                    <tr>
+                        <th>Rèv</th>
+                        <th>Boul</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor='let item of  datas; let d = index'>
+                        <td>
+                            {{item.reve}}
+                        </td>
+                        <td>
+                            {{item.num}}
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+
+
+</div>

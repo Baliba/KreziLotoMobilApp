@@ -1,0 +1,67 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Depo lajan sou kont ou'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+
+    <div class="box-form box-1" *ngIf="!frame && page==0">
+        <div class="col-md-12">
+            <div class="col-md-12">
+                <img [defaultImage]="'assets/images/af2.png'" [lazyLoad]="'assets/images/af2.png'" class="logo-game-icon" />
+            </div>
+            <div class="col-md-12">
+                <h3 class="text-center">Depo avèk Moncash</h3>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 ">
+                <app-alert [alert]="alert" pos="1"></app-alert>
+            </div>
+            <div class="form-group col-md-12 col-sm-12 ">
+                <label>Antre Kantite kob la </label>
+                <input type="number" class="form-control" min="50" [(ngModel)]="amount" />
+            </div>
+            <div class="form-group col-md-12 col-sm-12 ">
+                <label>Kòd koupon </label>
+                <input type="text" class="form-control" [(ngModel)]="cp" />
+            </div>
+            <div class="col-md-12 col-sm-12 ">
+                <button class="ok-btn col-md-12 btn-block" (click)="makeDepo()"> Depoze </button>
+            </div>
+            <hr/>
+            <div class="col-md-12 col-sm-12  text-center">
+                <a (click)="setPage(1)">Gade kijan pou fè depo ak moncash ? </a>
+            </div>
+            <hr/>
+            <div class="col-md-12 col-sm-12 ">
+                <img style="width: 98%; margin: 1%; " src="https://sandbox.moncashbutton.digicelgroup.com/Moncash-middleware/resources/assets/images/MC_button_kr.png">
+            </div>
+            <hr/>
+        </div>
+
+    </div>
+
+
+    <div class="box-form box-1" *ngIf="!frame && page==1">
+        <div class="col-md-12 col-sm-12  text-right text-danger">
+            <a (click)="setPage(0)" class="text-danger">Femen </a>
+        </div>
+        <div class="col-md-12 col-sm-12">
+            Kijan pou fè depo sou kont ou ak moncash
+        </div>
+        <div class="col-md-12 frame">
+            <iframe class="frame-video" src="https://www.youtube.com/embed/TZKPcizbCAw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+            </iframe>
+        </div>
+        <div class="col-md-12 col-sm-12 mt-2">
+            <button class="ok-btn col-md-12 btn-block" (click)="setPage(0)">komanse depoze lajan </button>
+        </div>
+    </div>
+
+    <div class="box-form box-1" *ngIf="frame">
+        <div class="col-md-12">
+            <button class="btn btn-danger btn-sm btn-float-right" (click)="closeFrame()">
+             <i class="glyphicon glyphicon glyphicon-remove"></i>
+            </button>
+        </div>
+        <iframe is="x-frame-bypass" class="col-md-12 frame" [src]="src | safe ">
+
+        </iframe>
+    </div>
+</div>

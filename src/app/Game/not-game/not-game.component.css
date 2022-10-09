@@ -1,0 +1,23 @@
+.card-not {
+    width: 100%;
+    display: inline-block;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin: auto;
+    margin-bottom: 2%;
+}
+
+.card-not span {
+    float: right;
+    font-size: 12px;
+}
+
+.card-not p {
+    color: grey;
+}
+
+.card-not h3 b {
+    float: right;
+    font-size: 15px;
+    color: grey;
+}

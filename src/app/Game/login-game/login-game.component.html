@@ -1,0 +1,38 @@
+<div class="page-auth game-gb">
+    <div class="col-md-6 col-md-offset-3 login col-sm-10 col-sm-offset-1">
+        <div class="col-md-12">
+            <img [defaultImage]="'assets/logo.png'" [lazyLoad]="'assets/logo.png'" class="logo-game" />
+        </div>
+        <div class="col-md-12">
+            <h3 class="text-center tyellow">Koneksyon</h3>
+        </div>
+        <div class="col-md-12">
+            <app-alert [alert]="alert" pos="1"></app-alert>
+        </div>
+        <div class="form-group col-md-12 ">
+            <label class="twhite">Telefòn</label>
+            <input type="phone" [(ngModel)]="creds.username" class="form-control" />
+        </div>
+        <div class="form-group col-md-12 ">
+            <label class="twhite">Kod sekrè</label>
+            <input [(ngModel)]="creds.password" type="password" class="form-control" />
+        </div>
+        <div class="form-group col-md-12 ">
+            <button type="button" class="ok-btn" (click)="checkLog()" [disabled]="loading[0]">Konekte</button>
+        </div>
+
+        <div class="form-group col-md-12" style="margin-top: 2%; margin-bottom:2%;">
+            <button class="btn btn-success" routerLink="/game/register">Kreye yon nouvo kont </button>
+        </div>
+
+        <div class="col-md-12 text-center">
+            <div class="or-content">
+
+                <p class="or-signup" style="margin-top:2%;">
+                    <br/> <br/>
+                    <a routerLink="/game/fpass" class="twhite">Ou bliye kòd sekrè ou? </a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

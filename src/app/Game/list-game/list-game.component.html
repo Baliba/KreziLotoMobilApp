@@ -1,0 +1,59 @@
+<div class="body-page-no-head-white">
+    <app-top-menu-game (pageEventLGame)="goBack()" [titre]="'Chwazi Jwet la'" [back]="false" [url]="'/game/home'" page="0"></app-top-menu-game>
+    <div class="box-form box-m">
+        <div class="col-md-12 boul-chans" *ngIf="lucky.length>0">
+            <hr>
+            <h3 class="">Nimewo chans ou pou jodya</h3>
+            <div class="row">
+                <div *ngFor="let i of lucky" class="boule">{{i}}</div>
+            </div>
+            <hr>
+        </div>
+
+        <div class="col-md-12" *ngIf="gameSettings?.games?.length>0">
+            <div class="row list-game" style="margin-bottom: none;" *ngFor='let g of  formatGames(gameSettings.games)  ; index as j'>
+                <div class="menu-top">
+                    <h2 class="text-left" (click)="see[j]=!see[j]">
+                        {{ g.cat }}
+                    </h2>
+                    <span *ngIf="!see[j]" (click)="see[j]=true">
+                      <i class="glyphicon glyphicon-chevron-down  text-success"></i>
+                    </span>
+                    <span *ngIf="see[j]" (click)="see[j]=false">
+                      <i class="glyphicon glyphicon-chevron-up text-danger"></i>
+                    </span>
+                </div>
+                <div class="row" style="margin-bottom: none;" *ngIf="see[j]">
+                    <div class="card col-md-12" *ngFor='let item of g.games   ; index as i'>
+
+                        <div class="left-block text-center">
+                            <img (click)="setGame(item)" src="assets/games/{{item.gamemaster.logo_game}}" />
+                        </div>
+                        <div class="right-block text-center">
+                            <div class="col-md-12 row">
+                                <h2>{{item.cat_game}}</h2>
+                            </div>
+                            <div class="col-md-12 row">
+                                <span>
+                              <i class="glyphicon glyphicon-time"></i> {{ getHour(item.gamemaster.hour_draw)}}</span>
+                                <button class="pay" (click)="setGame(item)">
+                                  Jwe
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="footer">
+                <img src="assets/bag.jpg">
+            </div>
+        </div>
+        <div class="card col-md-12" *ngIf="gameSettings?.games?.length==0">
+            <div class="col-md-12" style="text-align: center;">
+                <h3 class="text-center text-danger">Pa gen jwèt ki disponib pou kounya</h3>
+            </div>
+        </div>
+    </div>
+</div>

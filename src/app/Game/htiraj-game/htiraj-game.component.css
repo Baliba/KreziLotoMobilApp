@@ -1,0 +1,42 @@
+.card-pay {
+    width: 98%;
+    height: auto;
+}
+
+.line-card {
+    width: 96%;
+    margin-left: 2%;
+    display: inline-block;
+}
+
+.p-2 {
+    padding: 2%;
+}
+
+hr {
+    margin-top: -1%;
+    margin-bottom: -0.5%;
+}
+
+.white {
+    background-color: aliceblue;
+    margin: 2%;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.full-card {
+    width: 100%;
+    display: inline;
+}
+
+.left-card {
+    float: left;
+}
+
+.right-card {
+    float: right;
+}
+
+.text-center {
+    text-align: center;
+}

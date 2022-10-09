@@ -1,0 +1,153 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Chans Paw'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form-n box-m">
+        <h1 class="text-center">
+            Jwe ak lajan bonis ou
+        </h1>
+        <div class="board">
+
+            <div class="case " id="case-{{cases[0]?.id}}" [className]=" index!=1 ? 'case ocase' : ' case actived' ">
+                <div *ngIf="cases[0]?.type_win!=0">
+                    <h3 style="color: black;" *ngIf="cases[0]?.type_win==1">bonis</h3>
+                    <h3 style="color: black;" *ngIf="cases[0]?.type_win==2">cash</h3>
+                    <h3 style="color: black;" *ngIf="cases[0]?.sold">{{cases[0]?.sold}}G</h3>
+                </div>
+                <div *ngIf="cases[0]?.type_win==0">
+                    <h2 style="color: black;"> Ou pedi </h2>
+                </div>
+                <div *ngIf="cases[0]==undefined">
+                    <h2 style="color: black;"> ? </h2>
+                </div>
+            </div>
+            <div class="case ocase" id="case-{{cases[1]?.id}}" [className]=" index!=2 ? 'case ocase' : 'case actived' ">
+                <div *ngIf="cases[1]?.type_win!=0">
+                    <h3 style="color: black;" *ngIf="cases[1]?.type_win==1">bonis</h3>
+                    <h3 style="color: black;" *ngIf="cases[1]?.type_win==2">cash</h3>
+                    <h3 style="color: black;" *ngIf="cases[1]?.sold">{{cases[1]?.sold}}G</h3>
+                </div>
+                <div *ngIf="cases[1]?.type_win==0">
+                    <h2 style="color: black;"> Ou pedi </h2>
+                </div>
+                <div *ngIf="cases[1]==undefined">
+                    <h2 style="color: black;"> ? </h2>
+                </div>
+            </div>
+            <div class="case ocase" id="case-{{cases[2]?.id}}" [className]=" index!=3 ? ' case  ocase' : ' case  actived' ">
+                <div *ngIf="cases[2]?.type_win!=0">
+                    <h3 style="color: black;" *ngIf="cases[2]?.type_win==1">bonis</h3>
+                    <h3 style="color: black;" *ngIf="cases[2]?.type_win==2">cash</h3>
+                    <h3 style="color: black;" *ngIf="cases[2]?.sold">{{cases[2]?.sold}}G</h3>
+                </div>
+                <div *ngIf="cases[2]?.type_win==0">
+                    <h2 style="color: black;"> Ou pedi </h2>
+                </div>
+                <div *ngIf="cases[2]==undefined">
+                    <h2 style="color: black;"> ? </h2>
+                </div>
+            </div>
+            <div class="case ocase" id="case-{{cases[3]?.id}}" [className]=" index!=8 ? 'case  ocase' : 'case  actived' ">
+                <div *ngIf="cases[3]?.type_win!=0">
+                    <h3 style="color: black;" *ngIf="cases[3]?.type_win==1">bonis</h3>
+                    <h3 style="color: black;" *ngIf="cases[3]?.type_win==2">cash</h3>
+                    <h3 style="color: black;" *ngIf="cases[3]?.sold">{{cases[3]?.sold}}G</h3>
+                </div>
+                <div *ngIf="cases[3]?.type_win==0">
+                    <h2 style="color: black;"> Ou pedi </h2>
+                </div>
+                <div *ngIf="cases[3]==undefined">
+                    <h2 style="color: black;"> ? </h2>
+                </div>
+            </div>
+            <div class="case btn-click" *ngIf="user.bonus>0" (click)="goToKeno()">
+                <div>
+                    <i>Klike la</i>
+                    <h2>Jwe pou</h2>
+                    <h3>5G</h3>
+                </div>
+            </div>
+            <div class="case btn-click" *ngIf="user.bonus<=0">
+                <div>
+                    <i>Klike la</i>
+                    <h2>Jwe pou</h2>
+                    <h3>5G</h3>
+                </div>
+            </div>
+            <div class="case ocase" id="case-{{cases[4]?.id}}" [className]=" index!=4 ? 'case  ocase' : 'case  actived' ">
+                <div *ngIf="cases[4]?.type_win!=0">
+                    <h3 style="color: black;" *ngIf="cases[4]?.type_win==1">bonis</h3>
+                    <h3 style="color: black;" *ngIf="cases[4]?.type_win==2">cash</h3>
+                    <h3 style="color: black;" *ngIf="cases[4]?.sold">{{cases[4]?.sold}}G</h3>
+                </div>
+                <div *ngIf="cases[4]?.type_win==0">
+                    <h2 style="color: black;"> Ou pedi </h2>
+                </div>
+                <div *ngIf="cases[4]==undefined">
+                    <h2 style="color: black;"> ? </h2>
+                </div>
+            </div>
+            <div class="case ocase" id="case-{{cases[5]?.id}}" [className]=" index!=7 ? 'case  ocase' : 'case  actived' ">
+                <div *ngIf="cases[5]?.type_win!=0">
+                    <h3 style="color: black;" *ngIf="cases[5]?.type_win==1">bonis</h3>
+                    <h3 style="color: black;" *ngIf="cases[5]?.type_win==2">cash</h3>
+                    <h3 style="color: black;" *ngIf="cases[5]?.sold">{{cases[5]?.sold}}G</h3>
+                </div>
+                <div *ngIf="cases[5]?.type_win==0">
+                    <h2 style="color: black;"> Ou pedi </h2>
+                </div>
+                <div *ngIf="cases[5]==undefined">
+                    <h2 style="color: black;"> ? </h2>
+                </div>
+            </div>
+            <div class="case ocase" id="case-{{cases[6]?.id}}" [className]=" index!=6 ? 'case  ocase' : 'case  actived' ">
+                <div *ngIf="cases[6]?.type_win!=0">
+                    <h3 style="color: black;" *ngIf="cases[6]?.type_win==1">bonis</h3>
+                    <h3 style="color: black;" *ngIf="cases[6]?.type_win==2">cash</h3>
+                    <h3 style="color: black;" *ngIf="cases[6]?.sold">{{cases[6]?.sold}}G</h3>
+                </div>
+                <div *ngIf="cases[6]?.type_win==0">
+                    <h2 style="color: black;"> Ou pedi </h2>
+                </div>
+                <div *ngIf="cases[6]==undefined">
+                    <h2 style="color: black;"> ? </h2>
+                </div>
+            </div>
+            <div class="case ocase" id="case-{{cases[7]?.id}}" [className]=" index!=5 ? 'case ocase' : 'case  actived' ">
+                <div *ngIf="cases[7]?.type_win!=0">
+                    <h3 style="color: black;" *ngIf="cases[7]?.type_win==1">bonis</h3>
+                    <h3 style="color: black;" *ngIf="cases[7]?.type_win==2">cash</h3>
+                    <h3 style="color: black;" *ngIf="cases[7]?.sold">{{cases[7]?.sold}}G</h3>
+                </div>
+                <div *ngIf="cases[7]?.type_win==0">
+                    <h2 style="color: black;"> Ou pedi </h2>
+                </div>
+                <div *ngIf="cases[7]==undefined">
+                    <h2 style="color: black;"> ? </h2>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal" *ngIf="show">
+            <div *ngIf="case?.type_win!=0" style="margin-bottom: 5%;">
+                <h1 class="win-text">Ou genyen</h1>
+                <h2 style="color: #f4ba2e;" *ngIf="case?.type_win==1"> {{case?.sold}}G bonis</h2>
+                <h2 style="color:#f4ba2e;" *ngIf="case?.type_win==2">{{case?.sold}}G cash</h2>
+            </div>
+            <div *ngIf="case?.type_win==0" style="margin-bottom: 5%;">
+                <h2 class="lost-text"> Ou pedi </h2>
+            </div>
+            <button class="cancel-btn" (click)="init()">
+              Femen
+            </button>
+        </div>
+
+        <div class="modal" *ngIf="error">
+            <div style="margin-bottom: 5%;">
+                <h2 class="lost-text"> {{me}} </h2>
+            </div>
+            <button class="cancel-btn" (click)="init()">
+            Femen
+          </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+.menu-top {
+    position: relative;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    background: #5949b3;
+    height: 160px;
+    width: 100%;
+    box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    border-radius: 0px 0px 30px 30px;
+    padding-left: 10%;
+    padding-right: 10%;
+    display: inline-block;
+}
+
+.menu-top .tickets-ball:first {
+    float: left;
+}
+
+.i-top {
+    margin-top: 5px;
+}
+
+.line-bottom {
+    position: absolute;
+    width: 60px;
+    height: 300px;
+    float: left;
+    text-align: center;
+    font-size: 70%;
+    display: inline-block;
+    border: 1px solid black;
+    z-index: 9999;
+}
+
+.tickets-ball {
+    background-color: white;
+    color: #5949b3;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 12px;
+    display: block;
+    line-height: 100%;
+    padding: 2.5px;
+    padding-top: 5px;
+}
+
+.tickets-ball .ticket-img {
+    width: 24px;
+    height: auto;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    display: block;
+}
+
+.tickets-ball a i {
+    width: 24px;
+    height: auto;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+    display: block;
+    font-size: 24px;
+    vertical-align: center;
+}
+
+.tickets-ball b {
+    width: 98%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.line-up {
+    position: relative;
+    top: 0;
+    float: both;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 30px;
+    margin-bottom: 10px;
+    background-color: white;
+    box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    padding: 0.1%;
+    padding-top: 0.2%;
+    font-size: 70%;
+    font-weight: bold;
+    border-radius: 0px 0px 10px 10px;
+    line-height: 100%;
+}
+
+.line-up b::after {
+    content: "\A";
+    white-space: pre;
+}
+
+.line-up i {
+    font-size: 9px;
+    text-align: center;
+    line-height: 100%;
+    color: grey;
+}

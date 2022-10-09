@@ -1,0 +1,41 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Valide kont ou'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form box-m">
+        <div class="form-group col-md-12 col-sm-12 ">
+            <app-alert [alert]="alert" pos="1"></app-alert>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-12">
+                <label>Chanje Imel ou</label>
+                <input type="text" [(ngModel)]="user.email" class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+                <button class="btn btn-primary" [disabled]="loading[0]" (click)="edit()" style="margin-top: 2%;">Modifye</button>
+            </div>
+            <hr>
+            <div class="form-group col-md-12">
+                <button class="btn btn-success" [disabled]="loading[0]" (click)="resend()" style="margin-top: 2%;">Revoye PIN nan la </button>
+            </div>
+        </div>
+
+
+        <div class="alert alert-warning">
+            <p>
+                Al nan bwat mel ou wap resevwa yon imel, ki gen on PIN ladan , antre li la pouw ka valide kont ou. siw pa jwenn li tyeke SPAM ou.
+            </p>
+        </div>
+        <div class="form-group col-md-12 col-sm-12 ">
+            <app-alert [alert]="alert" pos="2"></app-alert>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-12">
+                <label>Antre PIN nan la pouw ka valide kont ou</label>
+                <input type="text" [(ngModel)]="pin" class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+                <button class="btn btn-primary" (click)="valider()" style="margin-top: 2%;">Valide</button>
+            </div>
+        </div>
+    </div>
+
+</div>

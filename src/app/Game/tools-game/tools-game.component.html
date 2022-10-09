@@ -1,0 +1,48 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Konfigirasyon'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form box-m">
+        <ul class="list-group menu-list">
+
+            <li class="list-group-item" routerLink="/game/profil">
+                <i class="glyphicon glyphicon-user"></i> Profil
+            </li>
+            <li class="list-group-item" routerLink="/game/cpass">
+                <i class="glyphicon glyphicon-lock"></i> Konfidans
+            </li>
+            <li class="list-group-item" routerLink="/game/configPayout">
+                <i class="glyphicon glyphicon-wrench"></i> Konfigirasyon peman
+            </li>
+            <li class="list-group-item " routerLink="/game/cpayout">
+                <i class="glyphicon glyphicon glyphicon-asterisk"></i> Retrè ankou
+            </li>
+            <li class="list-group-item" routerLink="/game/sponsor">
+                <i class="glyphicon glyphicon-gift"></i> Ajan Marketing
+            </li>
+            <li class="list-group-item" routerLink="/game/hdepo">
+                <i class="glyphicon glyphicon-download"></i> Istwa depo
+            </li>
+
+            <li class="list-group-item " routerLink="/game/hretre">
+                <i class="glyphicon glyphicon-upload"></i> Istwa Retrè
+            </li>
+            <li class="list-group-item" routerLink="/game/hticket">
+                <i class="glyphicon glyphicon-list-alt"></i> Istwa Fich
+            </li>
+            <li class="list-group-item" routerLink="/game/htiraj">
+                <i class="glyphicon glyphicon-bullhorn"></i> Istwa Tiraj
+            </li>
+            <li class="list-group-item" routerLink="/game/tchala">
+                <i class="glyphicon glyphicon-eye-open"></i> Tchala
+            </li>
+            <li class="list-group-item" routerLink="/game/prensip">
+                <i class="glyphicon glyphicon-question-sign"></i> Règ jwèt la
+            </li>
+            <li class="list-group-item" routerLink="/game/aide">
+                <i class="glyphicon glyphicon-info-sign"></i> Sipò ak èd
+            </li>
+            <li class="list-group-item" (click)="logout()">
+                <i class="glyphicon glyphicon-off"></i> Dekonekte
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,72 @@
+.menu-bottom {
+    position: fixed;
+    top: 90%;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    background: #5949b3;
+    height: 10%;
+    -webkit-box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    border-radius: 200% 200% 0px 0px;
+    padding-left: 10%;
+    padding-right: 10%;
+    z-index: 999;
+}
+
+.btn-block {
+    position: relative;
+    margin-top: -3%;
+    width: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    /* background-color: white; */
+}
+
+.btn-block .tool {
+    position: relative;
+    margin-left: 10px;
+    margin-right: 10px;
+    display: inline-block;
+    text-align: center;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f4ba2e), to(#fea036));
+    background-image: -o-linear-gradient(bottom, #f4ba2e 0%, #fea036 100%);
+    background-image: linear-gradient(0deg, #f4ba2e 0%, #fea036 100%);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fea036;
+    color: white;
+    -webkit-box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+    box-shadow: 0px 3px 43px 0px rgba(12, 0, 255, 0.1);
+}
+
+.btn-block .btn-left {
+    float: left;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-top: 20px;
+}
+
+.btn-block .btn-home {
+    float: both;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    padding-top: 5px;
+}
+
+.btn-block .btn-home i {
+    vertical-align: middle;
+    margin: auto;
+}
+
+.btn-block .btn-right {
+    float: right;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-top: 20px;
+    padding-top: 1px;
+}

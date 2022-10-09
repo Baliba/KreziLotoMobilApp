@@ -1,0 +1,45 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Profil'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form box-m">
+        <div class="col-md-12 col-sm-12 ">
+            <app-alert [alert]="alert" pos="1"></app-alert>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group col-md-6">
+                <label>Non</label>
+                <input type="text" [(ngModel)]="fuser.firstName" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Siyati</label>
+                <input type="text" [(ngModel)]="fuser.lastName" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Sex</label>
+                <select class="form-control" [(ngModel)]="fuser.sex">
+                  <option ngValue="M"> Gason </option>
+                   <option ngValue="F"> Fanm </option>
+               </select>
+            </div>
+            <div class="form-group col-md-6">
+                <label>Dat ou fet</label>
+                <input type="date" [(ngModel)]="fuser.dob" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Telefon 1</label>
+                <input type="phone" [(ngModel)]="fuser.phone" class="form-control">
+            </div>
+            <div class="form-group col-md-6">
+                <label>Telefon 2</label>
+                <input type="phone" [(ngModel)]="fuser.phone_b" class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+                <label>Adres</label>
+                <input type="text" [(ngModel)]="fuser.adress" class="form-control">
+            </div>
+            <div class="form-group col-md-12">
+                <button class="btn btn-primary" (click)="save()" style="margin-top: 2%;">Modifye</button>
+            </div>
+        </div>
+    </div>
+
+</div>

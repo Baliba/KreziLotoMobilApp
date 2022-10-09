@@ -1,0 +1,62 @@
+.i-top {
+    margin-top: 5px;
+}
+
+.line-bottom {
+    position: absolute;
+    top: 130px;
+    left: 1%;
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 0.1%;
+    line-height: 100%;
+}
+
+.tickets-ball {
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 100%;
+    box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: -1px 2px 7px -1px rgba(0, 0, 0, 0.75);
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 5px;
+    text-align: center;
+    font-size: 10px;
+    display: inline-block;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#f4ba2e), to(#fea036));
+    background-image: -o-linear-gradient(bottom, #f4ba2e 0%, #fea036 100%);
+    background-image: linear-gradient(0deg, #f4ba2e 0%, #fea036 100%);
+    border-style: solid;
+    border-width: 1px;
+    border-color: #fea036;
+}
+
+.tickets-ball .ticket-img {
+    width: 24px;
+    height: 24px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.tickets-ball a i {
+    width: 20px;
+    height: 20px;
+    display: block;
+    font-size: 20px;
+    vertical-align: center;
+    color: white;
+}
+
+.tickets-ball b {
+    width: 99%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}

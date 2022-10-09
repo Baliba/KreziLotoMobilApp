@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit:900');
+.card-km {
+    width: 100%;
+    min-height: 100px;
+    background: white;
+    text-align: center;
+}
+
+.card-km h2 {
+    color: #dd6e42;
+    font-family: 'Kanit', sans-serif;
+}
+
+.card-km h3 {
+    font-family: 'Kanit', sans-serif;
+    font-weight: small;
+}
+
+.card-km span {
+    color: #004F2D
+}
+
+.line-card {
+    width: 96%;
+    margin-left: 2%;
+    display: inline-block;
+}

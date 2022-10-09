@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Kanit:900');
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dongle:wght@300&display=swap');
+* {
+    font-size: 20px;
+}
+
+h1 {
+    font-family: 'Kanit', sans-serif;
+    font-size: 25px;
+    line-height: 1em;
+    font-weight: bold;
+    color: #1D263B;
+}
+
+label {
+    font-size: 30px;
+    line-height: 1em;
+    color: #1D263B;
+    font-weight: bold;
+}
+
+.hbonis {
+    font-family: 'Kanit', sans-serif;
+    font-size: 2rem;
+    line-height: 100%;
+    font-weight: bold;
+    color: #EF476F;
+}
+
+.page-1 {
+    position: absolute;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 10%;
+    height: 400px;
+    text-align: center;
+    line-height: 1em;
+    font-weight: bold;
+    font-family: 'Dongle', sans-serif;
+}
+
+.page-2 {
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    left: 1%;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    margin-top: 2%;
+    height: 100%;
+    text-align: center;
+    font-family: 'Dongle', sans-serif;
+}
+
+.list-game {
+    position: relative;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    height: 100px;
+    display: inline-block;
+    padding: 1px;
+    margin-bottom: 2%;
+}
+
+.list-game .games {
+    width: 23%;
+    margin-left: 1%;
+    margin-right: 1%;
+    position: relative;
+    height: 80px;
+}
+
+h2 {
+    font-family: 'Anton', sans-serif;
+    font-size: 1rem;
+    line-height: 100%;
+    color: #157f1f;
+}
+
+.bonis {
+    position: relative;
+    width: 98%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: -5%;
+    height: 100px;
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 100%;
+    font-family: 'Anton', sans-serif;
+    color: #7A7A7A;
+}
+
+input {
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 100%;
+    font-family: 'Anton', sans-serif;
+}
+
+.page-1 img {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.details {
+    font-family: 'Dongle', sans-serif;
+    line-height: 1em;
+    font-weight: bold;
+    color: #1D263B;
+    font-size: 25px;
+}
+
+.pay {
+    width: auto;
+    box-shadow: inset 0px 1px 0px 0px #54a3f7;
+    background: linear-gradient(to bottom, #007dc1 5%, #0061a7 100%);
+    background-color: #007dc1;
+    border-radius: 3px;
+    border: 1px solid #124d77;
+    display: inline;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 30px;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #154682;
+    margin: 2%;
+}
+
+.pay:hover {
+    background: linear-gradient(to bottom, #0061a7 5%, #007dc1 100%);
+    background-color: #0061a7;
+}
+
+.pay:active {
+    position: relative;
+    top: 1px;
+}
+
+.footer {
+    position: relative;
+    top: 90%;
+    bottom: 0%;
+    height: 10%;
+}
+
+.quit {
+    box-shadow: inset 0px 1px 0px 0px #f5978e;
+    background: linear-gradient(to bottom, #f24537 5%, #c62d1f 100%);
+    background-color: #f24537;
+    border-radius: 6px;
+    border: 1px solid #d02718;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #810e05;
+}
+
+.quit:hover {
+    background: linear-gradient(to bottom, #c62d1f 5%, #f24537 100%);
+    background-color: #c62d1f;
+}
+
+.quit:active {
+    position: relative;
+    top: 1px;
+}
+
+.depo {
+    box-shadow: inset 0px 1px 0px 0px #a4e271;
+    background: linear-gradient(to bottom, #89c403 5%, #77a809 100%);
+    background-color: #89c403;
+    border-radius: 6px;
+    border: 1px solid #74b807;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #528009;
+}
+
+.depo:hover {
+    background: linear-gradient(to bottom, #77a809 5%, #89c403 100%);
+    background-color: #77a809;
+}
+
+.depo:active {
+    position: relative;
+    top: 1px;
+}
+
+hr {
+    margin-top: 1.5%;
+    margin-bottom: 1.5%;
+}

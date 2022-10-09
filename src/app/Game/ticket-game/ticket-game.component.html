@@ -1,0 +1,119 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Lis fich yo '" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form">
+
+        <div class="col-md-12" *ngIf="tickets.length>0">
+            <h3 class="titre-gray">
+                Ou gen {{ tickets.length }} fich
+            </h3>
+            <div style="margin-bottom: 1%;" class="col-md-12 card-ticket" *ngFor='let item of tickets ; index as i'>
+                <div class="row">
+                    <div class="col-md-12 text-center" style="text-align: left;">
+                        <h3 class="text-success" routerLink='/game/ticket/{{item.id}}' style=" font-size:17px;">
+                            {{ item?.game_name }}
+                        </h3>
+                        <span style="float: right; text-align: right; font-size:12px;" *ngIf="item.assurance">
+                          <i class="glyphicon glyphicon-usd "></i> KreziMilyon
+                        </span>
+                        <span style="float: left; text-align: left; font-size:12px;">
+                             {{item.lots.length}} boul
+
+                        </span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="row col-md-12">
+                        <div class=" col-md-12 text-right" style="text-align: right;">
+                            <span style="float: left;" *ngIf="!see[i]" (click)="see[i]=true">
+                      <i class="glyphicon glyphicon-eye-open text-success"></i>
+                    </span>
+                            <span style="float:left;" *ngIf="see[i]" (click)="see[i]=false">
+                      <i class="glyphicon glyphicon-eye-close text-danger"></i>
+                    </span>
+                            <span style="float: right; color:gray; font-size:12px;">{{''| dateInText :item.sdatet }}</span>
+                        </div>
+                    </div>
+                    <div class="row col-md-12" *ngIf="see[i]">
+                        <table class="table" style="margin-top: 1%;" data-provides="rowlink">
+                            <thead>
+                                <tr>
+                                    <th>Jwèt</th>
+                                    <th>Boul</th>
+                                    <th>Montan</th>
+                                    <th>
+                                        Max Gen
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor='let cart of item.lots; let d = index'>
+                                    <td>
+                                        {{cart.code_mg}}
+                                    </td>
+                                    <td>
+                                        {{cart.lot}}
+                                    </td>
+                                    <td>
+                                        {{cart.montant | number}} G
+                                    </td>
+                                    <td>
+                                        {{cart.pwin | number}} G
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            Pri fich:
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td class="text-right">
+
+                                    </td>
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            {{ item.total_price | number}} G
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            Total max gen:
+                                        </div>
+                                    </td>
+                                    <td>
+
+                                    </td>
+                                    <td class="text-right">
+
+                                    </td>
+                                    <td>
+                                        <div class="col-md-12 text-right">
+                                            {{ item.max_win | number}} G
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="col-md-12 col-sm-12">
+                            <button class="btn btn-primary" routerLink="/game/ticket/{{item.id}}">
+                                Wè plis detay
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+            </div>
+
+        </div>
+        <div class="col-md-12" *ngIf="tickets.length==0">
+            <div class="col-md-12" style="text-align: center;">
+                <h3 class="text-center text-danger">0 Fich</h3>
+            </div>
+        </div>
+
+    </div>
+</div>

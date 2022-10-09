@@ -1,0 +1,74 @@
+<div class="body-page-no-head">
+    <app-page-title-game [titre]="'Retrè ankou'" [back]="true" [url]="'/game/home'"></app-page-title-game>
+    <div class="box-form-n box-m">
+        <div class="col-md-12 white " *ngFor="let item of pays">
+            <div class="line-card ">
+                <i class="right-card"> {{item.date_created}}</i>
+                <i class="left-card">  <b class="text-primary"> Retrè #{{item.id}}</b> </i>
+            </div>
+            <hr/>
+            <div class="row col-md-12 card-pay" *ngIf="item.type_pay==0">
+                <div class="line-card">
+                    <i class="left-card"> <b>Moncash</b>: {{item.moncashnumber}}</i>
+                    <i class="right-card"> <span class="badge bagde-primary"> {{(item.state)? item.state : 'Ankou'}} </span> </i>
+                </div>
+                <div class="line-card">
+                    <i class="left-card">  <b>Kom</b>: {{item.com}}G</i>
+                    <i class="right-card"> <b>Montan</b>:{{item.sold | number}}G</i>
+                </div>
+            </div>
+
+            <div class="row card col-md-12 card-pay" *ngIf="item.type_pay==1 || item.type_pay==2 ">
+
+                <div class="line-card">
+                    <p class="full-card"> <b>Bank / swift</b>: {{item.nombank}} / {{item.swift}}</p>
+                </div>
+                <div class="line-card">
+                    <p class="full-card"> <b>Nom kont</b>: {{item.nomcompte}}</p>
+                </div>
+                <dv class="line-card">
+                    <p class="full-card"> <b>No kont</b>: {{item.nocompte}}</p>
+                </dv>
+                <div class="line-card">
+                    <p class="left-card"> <b>Kom</b> : {{item.com}}G</p>
+                    <p class="right-card"><b>Montan</b> : {{item.sold | number}}G</p>
+                </div>
+
+                <div class="line-card">
+                    <p class="right-card"> <span class="badge bagde-primary"> {{(item.state)? item.state : 'Ankou'}} </span></p>
+                </div>
+            </div>
+            <div class="row card-pay" *ngIf="item.type_pay==3">
+                <div class="line-card">
+                    <p class="full-card"> <b>Chèk sou nom </b>: {{item.nom_complet}}</p>
+                </div>
+                <div class="line-card">
+                    <p class="left-card"> <b>Kom</b> : {{item.com}}G</p>
+                    <p class="right-card"><b>Montan</b> : {{item.sold | number}}G</p>
+                </div>
+                <div class="line-card">
+                    <p class="right-card"> <span class="badge bagde-primary"> {{(item.state)? item.state : 'Ankou'}} </span></p>
+                </div>
+            </div>
+            <div class="row card-pay" *ngIf="item.type_pay==5">
+                <div class="line-card">
+                    <p class="full-card"> <b>PIN</b>: {{item.pin}}</p>
+                </div>
+                <div class="line-card">
+                    <p class="left-card"> <b>Kom</b> : {{item.com}}G</p>
+                    <p class="right-card"><b>Montan</b> : {{item.sold | number}}G</p>
+                </div>
+                <div class="line-card">
+                    <p class="right-card"> <span class="badge bagde-primary"> {{(item.state)? item.state : 'Ankou'}} </span></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-12 white" *ngIf="pays.length==0">
+            <div class="col-md-12" style="text-align: center;">
+                <h3 class="text-center text-danger">0 Retrè ankou</h3>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,51 @@
+<div class="line-bottom">
+
+    <div class="tickets-ball">
+        <b>
+          Tikè
+       </b>
+        <a routerLink="/game/ticket" class="item-menu">
+            <i class="glyphicon glyphicon-list-alt"></i>
+        </a>
+    </div>
+    <div class="tickets-ball">
+        <a routerLink="/game/notification" class="item-menu">
+            <span class="badge bagde-primary" style="font-size:11px;">
+      {{ cNot }}
+      </span>
+            <i class="glyphicon glyphicon-bell">
+    </i>
+        </a>
+    </div>
+
+    <div class="tickets-ball">
+        <b>
+       Milyon
+      </b>
+        <a routerLink="/game/krezimilyon" class="item-menu">
+            <i class="glyphicon glyphicon-gift">
+          </i>
+        </a>
+    </div>
+
+    <div class="tickets-ball" routerLink="/game/changeTicket">
+        <b>
+          {{ getTK(user?.tickets) }}
+      </b>
+        <a class="item-menu">
+            <i class="glyphicon glyphicon-tags">
+           </i>
+        </a>
+    </div>
+
+    <div class="tickets-ball" *ngIf="user" routerLink="/game/tools">
+        <b>
+       Meni
+     </b>
+        <a class="item-menu">
+            <i class="glyphicon glyphicon-cog"></i>
+        </a>
+
+    </div>
+
+</div>

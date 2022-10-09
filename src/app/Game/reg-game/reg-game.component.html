@@ -1,0 +1,127 @@
+<div class="page-auth game-gb">
+    <div class="col-md-6 col-md-offset-3 login">
+        <img [defaultImage]="'assets/logo.png'" [lazyLoad]="'assets/logo.png'" class="logo-game" />
+        <div class="row">
+            <h3 class="text-center tyellow">Kreye kont ou</h3>
+        </div>
+        <div class="col-md-12 row">
+            <app-alert [alert]="alert" pos="1"></app-alert>
+        </div>
+        <div class class="col-md-12 row" *ngIf="page==0">
+            <div class="col-md-12 etap">
+                <span class="twhite">Etap 1/2</span>
+                <hr>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="twhite">Siyati</label>
+                <input type="text" [(ngModel)]="creds.lastName" class="form-control" placeholder="Siyati" />
+            </div>
+            <div class="form-group col-md-12 ">
+                <label class="twhite">Non</label>
+                <input type="text" [(ngModel)]="creds.firstName" class="form-control" placeholder="Non" />
+            </div>
+            <div class="form-group col-md-12">
+                <label class="twhite">Telefòn</label>
+                <input type="phone" [(ngModel)]="creds.username" class="form-control" placeholder="Telefòn" />
+            </div>
+            <div class="form-group col-md-12">
+                <button class="ok-btn" (click)="nextPageReg()" [disabled]="loading[0]">Swivan</button>
+            </div>
+        </div>
+        <div class class="col-md-12 row" *ngIf="page==1">
+            <div class="col-md-12 etap">
+                <span class="twhite">Etap 2/2</span>
+                <hr>
+            </div>
+            <div class="form-group col-md-12">
+                <label class="twhite">Imel</label>
+                <input type="phone" [(ngModel)]="creds.email" class="form-control" />
+            </div>
+            <div class="form-group col-md-12">
+                <label class="twhite">Kod sekrè</label>
+                <input [(ngModel)]="creds.pass_1" type="password" class="form-control" />
+            </div>
+            <div class="form-group col-md-12">
+                <label class="twhite">Re-antre Kod sekrè</label>
+                <input [(ngModel)]="creds.pass_2" type="password" class="form-control" />
+            </div>
+
+            <div class="form-group col-md-12">
+                <button class="ok-btn" *ngIf="!ok && !reg" (click)="checkReg()">Swivan</button>
+            </div>
+
+            <div class="form-group">
+                <button class="ok-btn" *ngIf="ok && !reg && !loading[0]" (click)="checkRegFinal()" [disabled]="loading[0]">Enskri</button>
+            </div>
+
+            <div class="form-group" *ngIf="!reg && !loading[0]">
+                <button style="margin-top:2%;" class="btn btn-danger pull-left" (click)="setPage(0)">Retounen</button>
+            </div>
+
+        </div>
+        <div class="col-md-12 text-center" style="margin-top:3%;">
+
+            <div class="or-content">
+                <p class="or-signup" class="twhite">
+                    <a routerLink="/game/login" class="twhite">Koneksyon  </a>,
+                    <a routerLink="/game/fpass" class="twhite"> Ou bliye kòd sekrè ou? </a>
+                </p>
+            </div>
+        </div>
+
+        <div class="card-reg" *ngIf="reg">
+            <div class="col-md-12">
+                <h3 class="text-center">Tèm ak kondisyon</h3>
+                <hr>
+            </div>
+            <div class="col-md-12 card-text">
+                Byenvini sou Kreziloto, kise yon jwet kasino ki plen jwet ladan.
+                <br> Moun yo ka jwe epi achte pwen, App sa bay prim lew genyen nan jwet la, li pran 24 èd tan o max pou jwenn prim sa yo finalizel, si lè sa ta depase ou ka rele ou ekri nou, pou jwenn enfomasyon sou kisa ki pase nan echanj ou an.
+                <br>Siw ta achte pwen li pa monte sou kont ou , ou ka kontakte system nan bay tout enfomasyon yo bezwen sou ou epi yap verifye pou ou epi yap metel pwen an sou kont ou .
+                <br>Siw lèw jwe ou wè gen erè , lew verifye pwen an li pa monte sou kont ou, ou dwe kontakte mèt jwet la bay enfo pou verifikasyon si tout bagay ok,wap jwen rekonpans lan .
+                <br>
+                <ol>
+                    <li> Jodya nou pral bow tèm ak kondisyon Kreziloto nan, li atantivman siw pa dako pa enskri. </li>
+                    <li> Met system nan gen dwa anile nenpot tikè li jije ki gen frod ak ere .</li>
+                    <li> Met system nan ki chwazi ki max limit pwen ou ka fe nan yon fich</li>
+                    <li> Ou pa ka anile yon fich ou fin valide , men met sistèm nan kapab , lap jis retounenw pwen yo te parye an. </li>
+                    <li>Ou pa gen dwa rele met sistem nan lajistis pou yon tike yo anile sof si ou gen yon bon rezon valab.</li>
+                    <li>Lè a konn chanje sa vle di pa ere ou ka fe yon fich apre tiraj finn fet si ta gen ere nan system , le konsa met sistem nan ap anile tikew la el pap remet ou kob la kom penalité, avanw jwe ou dwe asirew ke le tiraj yo pouko depase .</li>
+                    <li>
+                        Ou pa dwe fe anyen ki pou deranje system nan, si non met sistem nan dekouvri sa lap bloke kont ou e yo ka menm relew la jistis
+                    </li>
+                    <li>
+                        Sistem nan pa fosew bay enfomasyon ki verite sou ou , tout done wap bay yo se byen prive nou li ka fe sal vle avek yo sof bagay ki ka deranje pesonalitew sou tout fom.
+                    </li>
+                    <li>
+                        Siw ta chwazi fè yo demand echanj pa chek, si enfomasyon ou te mete nan sistem nan fo ou byen li gen erè nap refè chek la men wap peye yon penalite pou sa,
+                    </li>
+                    <li>
+                        Kont ou dwe toujou gen yon balans sou li lew ap fè echanj
+                    </li>
+                    <li>
+                        Kreziloto pran komisyon sou kek echanj ou fè.
+                    </li>
+                    <li>
+                        Kreziloto ka enpeche yon moun jwè nan sistem nan, ou byen chanje pwen ou , oubyen achte pwen etc... si moun nan pa respekte tout prensip yo.
+                    </li>
+                </ol>
+            </div>
+
+            <div class="col-md-12">
+                <hr>
+                <div class="col-md-9 center-text" style="text-align:center;">
+                    <label>wi,siw dako ak règleman yo klike sou bwat blan sa a</label>
+                </div>
+                <div class="col-md-3">
+                    <input type="checkbox" [(ngModel)]="ok" />
+                </div>
+                <div class="form-group" *ngIf="ok">
+                    <button class="ok-btn" (click)="checkRegFinal()" [disabled]="loading[0]">Kreye kont</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
